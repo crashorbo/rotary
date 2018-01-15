@@ -4,11 +4,6 @@ from .forms import RegistroForm
 
 
 def index(request):
-    form = RegistroForm(request.POST)
-    return render(request, 'portal/index.html')
-
-
-def registro(request):
     if request.method == 'POST':
         form = RegistroForm(request.POST)
         if form.is_valid():
@@ -17,7 +12,6 @@ def registro(request):
             usuario.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
-            return redirect('home')
     else:
         form = RegistroForm()
-    return render(request, 'portal/registro.html', {'form': form})
+    return render(request, 'portal/index.html', {'form': form})

@@ -901,3 +901,7 @@ textarea.form-control {
     text-align: center;
   }
 }
+
+.invalid-feedback{
+  color: RED;
+}
