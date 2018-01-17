@@ -905,3 +905,7 @@ textarea.form-control {
 .invalid-feedback{
   color: RED;
 }
+
+.titulo-sombra{
+  text-shadow: 3px 3px 3px #aaa;
+}
