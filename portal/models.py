@@ -5,10 +5,10 @@ from django.dispatch import receiver
 
 
 class Perfil(models.Model):
-    usuario = models.OneToOneField(User, related_name='userprofile', on_delete=models.CASCADE)
+    usuario = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE)
     nombre = models.CharField(max_length=200, blank=True)
     nro_documento = models.CharField(max_length=20, blank=True)
-    fecha_nacimiento = models.DateField(null=True, blank=True)
+    fecha_nacimiento = models.DateField(null=True, blank=True, default=None)
     direccion = models.CharField(max_length=200, blank=True)
     ciudad = models.CharField(max_length=100, blank=True)
 
@@ -17,4 +17,4 @@ class Perfil(models.Model):
 def update_user_profile(sender, instance, created, **kwargs):
     if created:
         Perfil.objects.create(usuario=instance)
-    instance.userprofile.save()
+    instance.profile.save()

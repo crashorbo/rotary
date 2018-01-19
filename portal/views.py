@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
+
 from .forms import RegistroForm
 
 
@@ -15,3 +17,8 @@ def index(request):
     else:
         form = RegistroForm()
     return render(request, 'portal/index.html', {'form': form})
+
+
+@login_required(login_url='/login/')
+def inicio(request):
+    return render(request, 'portal/inicio.html')
