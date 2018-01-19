@@ -249,12 +249,12 @@ File: Components
   padding: 6px 20px;
 }
 .btn-rounded .btn-label {
-  padding: 7px 20px 7px 15px;
-  margin-right: -20px;
+  padding: 7px 15px 7px 20px;
+  margin-left: -20px;
 }
 .btn-rounded .btn-label-right {
-  margin-left: -20px;
-  margin-right: 12px;
+  margin-right: -20px;
+  margin-left: 12px;
 }
 .btn-custom {
   -moz-border-radius: 2px;
@@ -262,6 +262,7 @@ File: Components
   -o-transition: all 400ms ease-in-out;
   -webkit-border-radius: 2px;
   -webkit-transition: all 400ms ease-in-out;
+  background: transparent;
   background-color: transparent !important;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -286,11 +287,11 @@ File: Components
   padding: 7px 15px;
   border-radius: 3px 0 0 3px;
   margin: -7px -13px;
-  margin-left: 12px;
+  margin-right: 12px;
 }
 .btn-label-right {
-  margin-right: 12px;
-  margin-left: -13px;
+  margin-left: 12px;
+  margin-right: -13px;
   border-radius: 0px 3px 3px 0px;
 }
 .btn-group.open .dropdown-toggle {
@@ -365,36 +366,9 @@ File: Components
   color: #ffffff !important;
   background-color: #171515 !important;
 }
-/* Loading Buttons */
-.ladda-button[data-style=expand-right] .ladda-spinner {
-  right: 17px;
-}
-.ladda-button[data-style=expand-down] .ladda-spinner,
-.ladda-button[data-style=expand-up] .ladda-spinner,
-.ladda-button[data-style=contract] .ladda-spinner,
-.ladda-button[data-style=slide-down] .ladda-spinner,
-.ladda-button[data-style=zoom-out] .ladda-spinner,
-.ladda-button[data-style="zoom-in"] .ladda-spinner,
-.ladda-button[data-style="slide-up"] .ladda-spinner {
-  right: 45%;
-  margin-right: 0;
-}
-.ladda-button[data-style=expand-left] .ladda-spinner {
-  left: 0;
-}
-.ladda-button[data-style="slide-right"] .ladda-spinner {
-  left: 100%;
-  margin-right: 0;
-  right: 16px;
-}
 /* =============
    Checkbox and Radios
 ============= */
-.radio label,
-.checkbox label {
-  padding-right: 25px !important;
-  line-height: 16px;
-}
 .checkbox {
   padding-left: 20px;
 }
@@ -407,12 +381,12 @@ File: Components
   -o-transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
   background-color: #ffffff;
-  border-radius: 2px;
+  border-radius: 3px;
   border: 1px solid #cccccc;
   content: "";
   display: inline-block;
   height: 17px;
-  right: 0;
+  left: 0;
   margin-left: -20px;
   position: absolute;
   transition: 0.3s ease-in-out;
@@ -424,7 +398,7 @@ File: Components
   display: inline-block;
   font-size: 11px;
   height: 16px;
-  right: 3px;
+  left: 0;
   margin-left: -20px;
   padding-left: 3px;
   padding-top: 1px;
@@ -444,6 +418,7 @@ File: Components
 .checkbox input[type="checkbox"]:focus + label::before {
   outline-offset: -2px;
   outline: none;
+  outline: thin dotted;
 }
 .checkbox input[type="checkbox"]:checked + label::after {
   content: "\f00c";
@@ -543,12 +518,12 @@ File: Components
   content: "";
   display: inline-block;
   height: 17px;
-  right: 0;
+  left: 0;
   margin-left: -20px;
-  outline: none !important;
   position: absolute;
   transition: border 0.5s ease-in-out;
   width: 17px;
+  outline: none !important;
 }
 .radio label::after {
   -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
@@ -562,7 +537,7 @@ File: Components
   content: " ";
   display: inline-block;
   height: 11px;
-  right: 3px;
+  left: 3px;
   margin-left: -20px;
   position: absolute;
   top: 3px;
@@ -581,6 +556,8 @@ File: Components
 }
 .radio input[type="radio"]:focus + label::before {
   outline-offset: -2px;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline: thin dotted;
 }
 .radio input[type="radio"]:checked + label::after {
   -ms-transform: scale(1, 1);
@@ -783,16 +760,19 @@ File: Components
 .panel-group .panel .panel-heading a[data-toggle=collapse].collapsed:before {
   content: '\f0d7';
 }
+.panel-group .panel .panel-heading .accordion-toggle.collapsed:before {
+  content: '\f0d7';
+}
 .panel-group .panel .panel-heading a[data-toggle=collapse] {
   display: block;
 }
 .panel-group .panel .panel-heading a[data-toggle=collapse]:before {
   content: '\f0d8';
   display: block;
-  float: left;
+  float: right;
   font-family: 'FontAwesome';
   font-size: 14px;
-  text-align: left;
+  text-align: right;
   width: 25px;
 }
 .panel-group .panel .panel-heading .accordion-toggle {
@@ -849,7 +829,7 @@ File: Components
 }
 .portlet .portlet-heading .portlet-title {
   color: #ffffff;
-  float: right;
+  float: left;
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 0;
@@ -859,7 +839,7 @@ File: Components
 }
 .portlet .portlet-heading .portlet-widgets {
   display: inline-block;
-  float: left;
+  float: right;
   font-size: 15px;
   line-height: 30px;
   padding-left: 15px;
@@ -1134,7 +1114,7 @@ table.focus-on tbody tr.focused td {
 }
 .table-rep-plugin .checkbox-row label {
   display: inline-block;
-  padding-right: 5px;
+  padding-left: 5px;
   position: relative;
 }
 .table-rep-plugin .checkbox-row label::before {
@@ -1146,8 +1126,8 @@ table.focus-on tbody tr.focused td {
   content: "";
   display: inline-block;
   height: 17px;
-  right: 0;
-  margin-right: -20px;
+  left: 0;
+  margin-left: -20px;
   position: absolute;
   transition: 0.3s ease-in-out;
   width: 17px;
@@ -1158,8 +1138,8 @@ table.focus-on tbody tr.focused td {
   display: inline-block;
   font-size: 11px;
   height: 16px;
-  right: 3px;
-  margin-right: -20px;
+  left: 0;
+  margin-left: -20px;
   padding-left: 3px;
   padding-top: 1px;
   position: absolute;
@@ -1249,8 +1229,7 @@ table.dataTable thead th.sorting_asc:after,
 table.dataTable thead th.sorting_desc:after {
   position: absolute;
   top: 7px;
-  left: 8px;
-  right: auto;
+  right: 8px;
   display: block;
   font-family: FontAwesome;
 }
@@ -1311,12 +1290,6 @@ table[data-toggle="table"] {
 .bootstrap-table .table > thead > tr > td {
   padding: 8px 12px !important;
 }
-.fixed-table-toolbar .search {
-  margin-left: 10px;
-}
-.fixed-table-container thead th .sortable {
-  background-position: left;
-}
 /* Tablesaw */
 .tablesaw thead {
   background: #ebeff2;
@@ -1364,8 +1337,6 @@ table[data-toggle="table"] {
 }
 .tablesaw-swipe .tablesaw-cell-persist {
   box-shadow: none;
-  border-left: 1px solid #e4e1de;
-  border-right: 0;
 }
 .tablesaw-enhanced .tablesaw-bar .btn {
   text-shadow: none;
@@ -1400,6 +1371,7 @@ div.ColVis {
 }
 button.ColVis_Button,
 .ColVis_Button:hover {
+  float: none;
   border-radius: 3px;
   outline: none !important;
   background: none;
@@ -1409,15 +1381,7 @@ button.ColVis_Button,
   border: 1px solid #5fbeaa !important;
 }
 .dataTables_length {
-  float: right;
-}
-table.dataTable thead > tr > th {
-  padding-left: 30px;
-  padding-right: 8px !important;
-}
-div.dataTables_wrapper div.dataTables_paginate,
-div.dataTables_wrapper div.dataTables_filter {
-  text-align: left;
+  float: left;
 }
 div.ColVis_collectionBackground {
   background-color: transparent;
@@ -1592,11 +1556,11 @@ ul.ColVis_collection li {
   border-radius: 100%;
   background-color: rgba(255, 255, 255, 0.2);
   display: inline-block;
-  float: right;
+  float: left;
   font-size: 30px;
   height: 60px;
   line-height: 60px;
-  margin-left: 10px;
+  margin-right: 10px;
   text-align: center;
   width: 60px;
 }
@@ -1639,8 +1603,8 @@ ul.ColVis_collection li {
 }
 .inbox-widget .inbox-item .inbox-item-img {
   display: block;
-  float: right;
-  margin-left: 15px;
+  float: left;
+  margin-right: 15px;
   width: 40px;
 }
 .inbox-widget .inbox-item img {
@@ -1661,7 +1625,7 @@ ul.ColVis_collection li {
   color: #a9a9a9;
   font-size: 11px;
   position: absolute;
-  left: 7px;
+  right: 7px;
   top: 2px;
 }
 /* Chat widget */
@@ -1729,7 +1693,6 @@ ul.ColVis_collection li {
   font-size: 12px;
   margin-left: 12px;
   width: 70%;
-  text-align: left;
 }
 .conversation-list .odd .chat-avatar {
   float: right !important;
@@ -1746,11 +1709,10 @@ ul.ColVis_collection li {
   border-top-color: #f4f8fb !important;
   left: 100% !important;
   margin-right: -1px;
-  right: auto;
 }
 .chat-send {
-  padding-right: 0px;
-  padding-left: 30px;
+  padding-left: 0px;
+  padding-right: 30px;
 }
 .chat-send button {
   width: 100%;
@@ -1763,9 +1725,9 @@ ul.ColVis_collection li {
   font-size: 16px;
 }
 .todo-list li {
-  border-radius: 0;
-  border: 0;
-  margin: 0;
+  border-radius: 0px;
+  border: 0px;
+  margin: 0px;
   padding: 1px;
   color: #98a6ad;
 }
@@ -1773,17 +1735,17 @@ ul.ColVis_collection li {
   border-bottom: none;
 }
 .todo-send {
-  padding-right: 0;
+  padding-left: 0px;
 }
 /* Widget-chart */
 .widget-chart ul li {
   width: 31.5%;
   display: inline-block;
-  padding: 0;
+  padding: 0px;
 }
 .widget-panel {
   padding: 30px 20px;
-  padding-right: 30px;
+  padding-left: 30px;
   border-radius: 4px;
   position: relative;
   margin-bottom: 20px;
@@ -1793,9 +1755,9 @@ ul.ColVis_collection li {
   padding: 30px;
   background: rgba(255, 255, 255, 0.2);
   position: absolute;
-  left: 0;
-  bottom: 0;
-  top: 0;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
   line-height: 60px;
 }
 .widget-style-2 i {
@@ -1862,7 +1824,7 @@ ul.ColVis_collection li {
   font-size: 12px;
 }
 .transaction-list .tran-text {
-  padding-right: 25px;
+  padding-left: 25px;
   white-space: nowrap;
   display: inline-block;
   overflow: hidden;
@@ -1870,7 +1832,7 @@ ul.ColVis_collection li {
   width: 115px;
 }
 .transaction-list .tran-price {
-  margin-right: 30px;
+  margin-left: 30px;
 }
 /* Friend list */
 .friend-list a {

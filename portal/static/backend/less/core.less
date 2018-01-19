@@ -21,6 +21,7 @@ File: Core
    - Helper classes
    - Extra
    - Bootstrap Custom
+   - Topbar, Leftbar and Rightbar
    - Animation (Some loader)
    - Waves effect
    - Print (Invoice css)
@@ -36,20 +37,14 @@ body {
   font-family: @font-primary;
   margin: 0;
   overflow-x: hidden;
+  padding-bottom: 65px;
   color: #797979;
-  padding-bottom: 70px;
 }
 html {
-  position: relative;
-  min-height: 100%;
-  background: @light5;
-  direction: rtl;
+    position: relative;
+    min-height: 100%;
+    background: @light5;
 }
-
-.container {
-  width: 94%;
-}
-
 h1, h2, h3, h4, h5, h6 {
   color: #505458;
   font-family: @font-secondary;
@@ -112,6 +107,9 @@ a {
   }
 }
 
+.container {
+  width: 90%;
+}
 
 .container-alt {
   margin-left: auto;
@@ -120,24 +118,6 @@ a {
   padding-right: 15px;
 }
 
-/* Footer */
-.footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  bottom: 0;
-  color: #58666e;
-  text-align:left !important;
-  padding: 20px 30px;
-  position: absolute;
-  left: 0;
-  right: 240px;
-  font-size: 13px;
-}
-
-#wrapper {
-  height: @height;
-  overflow: hidden;
-  width: @width;
-}
 
 .page {
   bottom: 0;
@@ -192,7 +172,7 @@ a {
 ============= */
 
 .p-0 {
-  padding: 0 !important;
+  padding: 0px !important;
 }
 .p-20 {
   padding: 20px !important;
@@ -201,19 +181,19 @@ a {
   padding: 30px !important;
 }
 .p-l-0 {
-  padding-right: 0 !important;
+  padding-left: 0px !important;
 }
 .p-r-0 {
-  padding-left: 0 !important;
+  padding-right: 0px !important;
 }
 .p-t-0 {
-  padding-top: 0 !important;
+  padding-top: 0px !important;
 }
 .p-t-10 {
   padding-top: 10px !important;
 }
 .p-b-0 {
-  padding-bottom: 0 !important;
+  padding-bottom: 0px !important;
 }
 .p-b-10 {
   padding-bottom: 10px !important;
@@ -223,22 +203,22 @@ a {
   padding-right: 10px;
 }
 .m-0 {
-  margin: 0 !important;
+  margin: 0px !important;
 }
 .m-r-5 {
-  margin-left: 5px !important;
-}
-.m-r-10 {
-  margin-left: 10px !important;
-}
-.m-r-15 {
-  margin-left: 15px !important;
-}
-.m-l-5 {
   margin-right: 5px !important;
 }
-.m-l-10 {
+.m-r-10 {
   margin-right: 10px !important;
+}
+.m-r-15 {
+  margin-right: 15px !important;
+}
+.m-l-5 {
+  margin-left: 5px !important;
+}
+.m-l-10 {
+  margin-left: 10px !important;
 }
 .m-l-15 {
   margin-left: 15px !important;
@@ -247,7 +227,7 @@ a {
   margin-top: 5px !important;
 }
 .m-t-0 {
-  margin-top: 0 !important;
+  margin-top: 0px !important;
 }
 .m-t-10 {
   margin-top: 10px !important;
@@ -265,7 +245,7 @@ a {
   margin-top: 40px !important;
 }
 .m-b-0 {
-  margin-bottom: 0 !important;
+  margin-bottom: 0px !important;
 }
 .m-b-5 {
   margin-bottom: 5px !important;
@@ -874,7 +854,6 @@ textarea.form-control {
   li {
     a{
       line-height: 36px !important;
-      padding: 0 15px;
     }
   }
   li.active{
@@ -1080,7 +1059,7 @@ textarea.form-control {
     .close {
       position: absolute;
       top: 15px;
-      left: 25px;
+      right: 25px;
       color: @light;
     }
 }
@@ -1091,7 +1070,7 @@ textarea.form-control {
     font-size: 18px;
     background-color: #36404a;
     color: @white;
-    text-align: right;
+    text-align: left;
     margin: 0px;
 }
 .custom-modal-text {
@@ -1177,8 +1156,6 @@ textarea.form-control {
 .popover {
   font-family: inherit;
   border: none;
-  direction: rtl;
-  right: auto;
   .border-radius(3px);
 
   .popover-title {
@@ -1186,12 +1163,6 @@ textarea.form-control {
     color: @custom;
     font-weight: 600;
   }
-}
-.popover.right>.arrow {
-  border-left-color: transparent;
-  border-right-color: transparent;
-  left: -10px;
-  right: auto;
 }
 
 /* Code */
@@ -1225,10 +1196,6 @@ pre{
     font-size: 30px;
   }
 }
-.carousel-control.left {
-  left: 0;
-  right: auto;
-}
 /* Owl */
 .slider-bg {
   background-size: cover !important;
@@ -1247,6 +1214,8 @@ pre{
 .media:last-of-type {
    margin-bottom: 0px;
 }
+
+
 
 
 
@@ -1573,55 +1542,16 @@ pre{
    Print css
 ============= */
 
+/* =============
+   Print
+============= */
 @media print {
-  .logo,.breadcrumb,.page-title,.footer ,#topnav{
-    display: none;
-    margin: 0;
-    padding: 0;
+  #topnav,
+  .page-title,
+  .breadcrumb,
+  .btn-default.dropdown-toggle {
+    display: none !important;
+    margin: 0px !important;
+    padding: 0px !important;
   }
-
-  .left,.right-bar {
-    display: none;
-  }
-  .content,.wrapper {
-    margin-top: 0;
-    padding-top: 0;
-  }
-  .content-page {
-    margin-right: 0;
-    margin-top: 0;
-  }
-}
-
-/* RTL */
-.pull-right,
-.navbar-right {
-  float: left !important;
-}
-.pull-left,
-.navbar-left {
-  float: right !important;
-}
-
-.text-right {
-  text-align: left;
-}
-.text-left {
-  text-align: right;
-}
-.pull-right>.dropdown-menu {
-    left: 0;
-    right: auto;
-}
-
-@media (min-width: 768px) {
-  .navbar-right .dropdown-menu {
-    left: 0;
-    right: auto;
-  }
-}
-.datepicker-dropdown,
-.colorpicker,
-.bootstrap-timepicker-widget.dropdown-menu {
-  right: auto;
 }

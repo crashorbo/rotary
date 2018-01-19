@@ -39,7 +39,6 @@
         var editor = CodeMirror.fromTextArea(document.getElementById("code3"), {
             mode: {name: "javascript"},
             lineNumbers: true,
-            rtlMoveVisually: true
         });
         CodeMirror.commands["selectAll"](editor);
 
@@ -47,11 +46,11 @@
         $('.autoformat').click(function(){
             $this.autoFormatSelection(editor);
         });
-
+        
         $('.commentbtn').click(function(){
             $this.commentSelection(true, editor);
         });
-
+        
         $('.uncomment').click(function(){
             $this.commentSelection(false, editor);
         });
@@ -60,7 +59,7 @@
     $.CodeEditor = new CodeEditor, $.CodeEditor.Constructor = CodeEditor
 }(window.jQuery),
 
-//initializing
+//initializing 
 function($) {
     "use strict";
     $.CodeEditor.init()

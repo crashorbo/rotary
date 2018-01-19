@@ -38,7 +38,7 @@ File: Menu
   letter-spacing: .05em;
   margin-top: 8px;
   text-transform: uppercase;
-  float: right;
+  float: left;
 }
 #topnav .topbar-main .logo h1 {
   margin: 0px auto;
@@ -161,16 +161,16 @@ File: Menu
   border: 2px solid #4c5667;
 }
 #topnav .topbar-main .navbar-nav {
-  margin: 0;
+  margin: 0px;
 }
 #topnav .app-search {
   position: relative;
-  margin: 15px 0 15px 15px;
+  margin: 15px 20px 15px 10px;
 }
 #topnav .app-search a {
   position: absolute;
   top: 5px;
-  left: 20px;
+  right: 20px;
   color: #c4c4cd;
 }
 #topnav .app-search .form-control,
@@ -178,13 +178,12 @@ File: Menu
   border: none;
   font-size: 13px;
   color: #ffffff;
-  padding-right: 20px;
-  padding-left: 40px;
+  padding-left: 20px;
+  padding-right: 40px;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: none;
   border-radius: 30px;
   height: 30px;
-  font-weight: 600;
   width: 180px;
 }
 #topnav .navbar-custom {
@@ -252,7 +251,7 @@ File: Menu
   padding: 0;
 }
 #topnav .navigation-menu > li {
-  float: right;
+  float: left;
   display: block;
   position: relative;
 }
@@ -306,8 +305,8 @@ File: Menu
 */
 @media (min-width: 992px) {
   #topnav .navigation-menu > li.last-elements .submenu {
-    right: auto;
-    left: 0;
+    left: auto;
+    right: 0;
   }
   #topnav .navigation-menu > li.last-elements .submenu > li.has-submenu .submenu {
     left: auto;
@@ -316,7 +315,7 @@ File: Menu
     margin-right: 10px;
   }
   #topnav .navigation-menu > li:first-of-type a {
-    padding-right: 0;
+    padding-left: 0px;
   }
   #topnav .navigation-menu > li:hover a {
     color: #5fbeaa;
@@ -327,7 +326,7 @@ File: Menu
   #topnav .navigation-menu > li .submenu {
     position: absolute;
     top: 100%;
-    right: 0;
+    left: 0;
     z-index: 1000;
     border: 1px solid #e7e7e7;
     padding: 15px 0;
@@ -352,16 +351,16 @@ File: Menu
     vertical-align: top;
   }
   #topnav .navigation-menu > li .submenu > li.has-submenu > a:after {
-    content: "\e64a";
+    content: "\e649";
     font-family: "themify";
     position: absolute;
-    left: 20px;
+    right: 20px;
     font-size: 9px;
   }
   #topnav .navigation-menu > li .submenu > li .submenu {
-    right: 100%;
+    left: 100%;
     top: 0;
-    margin-right: 10px;
+    margin-left: 10px;
     margin-top: -1px;
   }
   #topnav .navigation-menu > li .submenu li {
@@ -369,7 +368,7 @@ File: Menu
   }
   #topnav .navigation-menu > li .submenu li ul {
     list-style: none;
-    padding-right: 0;
+    padding-left: 0;
     margin: 0;
   }
   #topnav .navigation-menu > li .submenu li a {
@@ -422,7 +421,7 @@ File: Menu
   }
   #topnav .navigation-menu > li > a i {
     display: inline-block;
-    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 0px;
   }
   #topnav .navigation-menu > li > a:after {
@@ -432,7 +431,7 @@ File: Menu
   #topnav .navigation-menu > li .submenu {
     display: none;
     list-style: none;
-    padding-right: 20px;
+    padding-left: 20px;
     margin: 0;
   }
   #topnav .navigation-menu > li .submenu li a {
@@ -448,7 +447,7 @@ File: Menu
     content: "\e64b";
     font-family: "themify";
     position: absolute;
-    left: 30px;
+    right: 30px;
   }
   #topnav .navigation-menu > li .submenu.open {
     display: block;
@@ -477,7 +476,7 @@ File: Menu
     color: #5fbeaa;
   }
   #topnav .navbar-header {
-    float: right;
+    float: left;
   }
   #navigation {
     position: absolute;

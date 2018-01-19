@@ -592,12 +592,8 @@
     var comp = compensateForHScroll(display) - display.scroller.scrollLeft + cm.doc.scrollLeft;
     var gutterW = display.gutters.offsetWidth, left = comp + "px";
     for (var i = 0; i < view.length; i++) if (!view[i].hidden) {
-      if (cm.options.fixedGutter) {
-        if (view[i].gutter)
-          view[i].gutter.style.left = left;
-        if (view[i].gutterBackground)
-          view[i].gutterBackground.style.left = left;
-      }
+      if (cm.options.fixedGutter && view[i].gutter)
+        view[i].gutter.style.left = left;
       var align = view[i].alignable;
       if (align) for (var j = 0; j < align.length; j++)
         align[j].style.left = left;
@@ -1153,7 +1149,7 @@
   }
 
   function handlePaste(e, cm) {
-    var pasted = e.clipboardData && e.clipboardData.getData("Text");
+    var pasted = e.clipboardData && e.clipboardData.getData("text/plain");
     if (pasted) {
       e.preventDefault();
       if (!cm.isReadOnly() && !cm.options.disableInput)
@@ -1197,10 +1193,10 @@
     return {text: text, ranges: ranges};
   }
 
-  function disableBrowserMagic(field, spellcheck) {
+  function disableBrowserMagic(field) {
     field.setAttribute("autocorrect", "off");
     field.setAttribute("autocapitalize", "off");
-    field.setAttribute("spellcheck", !!spellcheck);
+    field.setAttribute("spellcheck", "false");
   }
 
   // TEXTAREA INPUT STYLE
@@ -1578,14 +1574,10 @@
     init: function(display) {
       var input = this, cm = input.cm;
       var div = input.div = display.lineDiv;
-      disableBrowserMagic(div, cm.options.spellcheck);
+      disableBrowserMagic(div);
 
       on(div, "paste", function(e) {
-        if (signalDOMEvent(cm, e) || handlePaste(e, cm)) return
-        // IE doesn't fire input events, so we schedule a read for the pasted content in this way
-        if (ie_version <= 11) setTimeout(operation(cm, function() {
-          if (!input.pollContent()) regChange(cm);
-        }), 20)
+        if (!signalDOMEvent(cm, e)) handlePaste(e, cm);
       })
 
       on(div, "compositionstart", function(e) {
@@ -1645,27 +1637,23 @@
             });
           }
         }
-        if (e.clipboardData) {
+        // iOS exposes the clipboard API, but seems to discard content inserted into it
+        if (e.clipboardData && !ios) {
+          e.preventDefault();
           e.clipboardData.clearData();
-          var content = lastCopied.text.join("\n")
-          // iOS exposes the clipboard API, but seems to discard content inserted into it
-          e.clipboardData.setData("Text", content);
-          if (e.clipboardData.getData("Text") == content) {
-            e.preventDefault();
-            return
-          }
+          e.clipboardData.setData("text/plain", lastCopied.text.join("\n"));
+        } else {
+          // Old-fashioned briefly-focus-a-textarea hack
+          var kludge = hiddenTextarea(), te = kludge.firstChild;
+          cm.display.lineSpace.insertBefore(kludge, cm.display.lineSpace.firstChild);
+          te.value = lastCopied.text.join("\n");
+          var hadFocus = document.activeElement;
+          selectInput(te);
+          setTimeout(function() {
+            cm.display.lineSpace.removeChild(kludge);
+            hadFocus.focus();
+          }, 50);
         }
-        // Old-fashioned briefly-focus-a-textarea hack
-        var kludge = hiddenTextarea(), te = kludge.firstChild;
-        cm.display.lineSpace.insertBefore(kludge, cm.display.lineSpace.firstChild);
-        te.value = lastCopied.text.join("\n");
-        var hadFocus = document.activeElement;
-        selectInput(te);
-        setTimeout(function() {
-          cm.display.lineSpace.removeChild(kludge);
-          hadFocus.focus();
-          if (hadFocus == div) input.showPrimarySelection()
-        }, 50);
       }
       on(div, "copy", onCopyCut);
       on(div, "cut", onCopyCut);
@@ -1973,7 +1961,7 @@
       if (found)
         return badPos(Pos(found.line, found.ch + dist), bad);
       else
-        dist += before.textContent.length;
+        dist += after.textContent.length;
     }
   }
 
@@ -4960,10 +4948,7 @@
     addOverlay: methodOp(function(spec, options) {
       var mode = spec.token ? spec : CodeMirror.getMode(this.options, spec);
       if (mode.startState) throw new Error("Overlays may not be stateful.");
-      insertSorted(this.state.overlays,
-                   {mode: mode, modeSpec: spec, opaque: options && options.opaque,
-                    priority: (options && options.priority) || 0},
-                   function(overlay) { return overlay.priority })
+      this.state.overlays.push({mode: mode, modeSpec: spec, opaque: options && options.opaque});
       this.state.modeGen++;
       regChange(this);
     }),
@@ -5435,9 +5420,6 @@
   option("inputStyle", mobile ? "contenteditable" : "textarea", function() {
     throw new Error("inputStyle can not (yet) be changed in a running editor"); // FIXME
   }, true);
-  option("spellcheck", false, function(cm, val) {
-    cm.getInputField().spellcheck = val
-  }, true);
   option("rtlMoveVisually", !windows);
   option("wholeLineUpdateBefore", true);
 
@@ -5547,8 +5529,6 @@
       spec.name = found.name;
     } else if (typeof spec == "string" && /^[\w\-]+\/[\w\-]+\+xml$/.test(spec)) {
       return CodeMirror.resolveMode("application/xml");
-    } else if (typeof spec == "string" && /^[\w\-]+\/[\w\-]+\+json$/.test(spec)) {
-      return CodeMirror.resolveMode("application/json");
     }
     if (typeof spec == "string") return {name: spec};
     else return spec || {name: "null"};
@@ -7978,7 +7958,7 @@
   }
 
   // Register a change in the history. Merges changes that are within
-  // a single operation, or are close together with an origin that
+  // a single operation, ore are close together with an origin that
   // allows merging (starting with "+") into a single event.
   function addChangeToHistory(doc, change, selAfter, opId) {
     var hist = doc.history;
@@ -8379,12 +8359,6 @@
     var out = [];
     for (var i = 0; i < array.length; i++) out[i] = f(array[i], i);
     return out;
-  }
-
-  function insertSorted(array, value, score) {
-    var pos = 0, priority = score(value)
-    while (pos < array.length && score(array[pos]) <= priority) pos++
-    array.splice(pos, 0, value)
   }
 
   function nothing() {}
@@ -8955,7 +8929,7 @@
 
   // THE END
 
-  CodeMirror.version = "5.18.3";
+  CodeMirror.version = "5.17.0";
 
   return CodeMirror;
 });
