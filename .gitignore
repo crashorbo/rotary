@@ -1,0 +1,8 @@
+#esto es lo que se debe ignorar
+
+*.egg-info
+*.pot
+*.py[co]
+.tox/
+__pycache__
+static/
