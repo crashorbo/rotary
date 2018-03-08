@@ -10,6 +10,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 .vscode/
-static/
+.idea/
 portal/__pycache__/
 rotary/__pycache__/

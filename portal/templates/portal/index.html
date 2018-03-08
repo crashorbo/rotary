@@ -10,7 +10,7 @@
 
         <link rel="shortcut icon" href="{% static 'frontend/images/favirotary.png' %}">
 
-        <title>Rotary | {% block titulo %}{% endblock %}</title>
+        <title>Rotary | Inicio</title>
 
         <!-- Google Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
@@ -57,7 +57,7 @@
     
                         <!-- LOGO -->
                         <a class="navbar-brand logo" href="index.html">
-                            <img src="{% static 'frontend/images/logo1.png' %}" alt="">
+                            <img src="{% static 'frontend/images/favirotaryo.png' %}" alt="">
                         </a>
     
                     </div>
@@ -81,10 +81,10 @@
                                 <a href="#clients" class="nav-link">Lugar</a>
                             </li>
                             <li>
-                                <a href="">Ingreso</a>
+                                <a href="{% url 'auth_login' %}">Ingreso</a>
                             </li>
                             <li>
-                                <a href="" class="btn btn-white-bordered navbar-btn">INSCRIBETE</a>
+                                <a href="{% url 'registration_register' %}" class="btn btn-white-bordered navbar-btn">INSCRIBETE</a>
                             </li>
                         </ul>
     
@@ -151,7 +151,7 @@
                                     </ul>
 
                                     <div class="text-center">
-                                        <a href="#" class="btn btn-sm btn-custom">INSCRIBETE</a>
+                                        <a href="{% url 'registration_register' %}" class="btn btn-sm btn-custom">INSCRIBETE</a>
                                     </div>
                                 </div>
                             </article>
@@ -169,7 +169,7 @@
                                         <li> <i class="pe-7s-server"></i>Personas <b>1</b></li>                                        
                                     </ul>
                                     <div class="text-center">
-                                        <a href="#" class="btn btn-sm btn-custom">INSCRIBETE</a>
+                                        <a href="{% url 'registration_register' %}" class="btn btn-sm btn-custom">INSCRIBETE</a>
                                     </div>
                                 </div>
                             </article>
@@ -186,7 +186,7 @@
                                     </ul>
 
                                     <div class="text-center">
-                                        <a href="#" class="btn btn-sm btn-custom">INSCRIBETE</a>
+                                        <a href="{% url 'registration_register' %}" class="btn btn-sm btn-custom">INSCRIBETE</a>
                                     </div>
                                 </div>
                             </article>
@@ -202,7 +202,7 @@
                                         <li> <i class="pe-7s-server"></i>Personas <b>1</b></li>                                        
                                     </ul>
                                     <div class="text-center">
-                                        <a href="#" class="btn btn-sm btn-custom">INSCRIBETE</a>
+                                        <a href="{% url 'registration_register' %}" class="btn btn-sm btn-custom">INSCRIBETE</a>
                                     </div>
                                 </div>
                             </article>
