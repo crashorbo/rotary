@@ -34,7 +34,7 @@
                         <p class="text-muted font-13"><strong>Telefono/Celular :</strong> <span class="m-l-15">{{ participante.telefono }}</span></p>
 
                         <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15">{{ participante.email }}</span></p>
-                        <p class="text-right"><a class="btn btn-warning text-uppercase waves-effect waves-light" type="submit">Editar</a></p>
+                        <p class="text-right"><a class="btn btn-warning text-uppercase waves-effect waves-light" href="{% url 'participante_update' pk=participante.id %}">Editar</a></p>
                     </div>
                 </div>
             </div>
