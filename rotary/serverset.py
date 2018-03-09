@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'rotarysanmiguel$rotary',
         'USER': 'rotarysanmiguel',
-        'PASSWORD': 'alexbase',
+        'PASSWORD': 'alexrotar',
         'HOST': 'rotarysanmiguel.mysql.pythonanywhere-services.com',
     }
 }
