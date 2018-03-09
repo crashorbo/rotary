@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'rotarysanmiguel$rotary',
         'USER': 'rotarysanmiguel',
         'PASSWORD': 'alexrotar',
-        'HOST': 'rotarysanmiguel.mysql.pythonanywhere-services.com',
+        'HOST': 'mysql.server',
     }
 }
 

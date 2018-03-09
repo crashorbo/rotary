@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c752f296-c6f1-47f5-8202-1e4f8fd1cd01" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/rotary/serverset.py" afterPath="$PROJECT_DIR$/rotary/serverset.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,8 +60,8 @@
       <file leaf-file-name="serverset.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rotary/serverset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="83" column="30" lean-forward="false" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+            <state relative-caret-position="329">
+              <caret line="84" column="29" lean-forward="false" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
               <folding>
                 <element signature="e#308#317#0" expanded="true" />
               </folding>
@@ -339,8 +340,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rotary/serverset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="83" column="30" lean-forward="false" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+        <state relative-caret-position="329">
+          <caret line="84" column="29" lean-forward="false" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
           <folding>
             <element signature="e#308#317#0" expanded="true" />
           </folding>
