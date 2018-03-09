@@ -11,6 +11,6 @@ __pycache__/
 .Python
 .vscode/
 .idea/
-static/
+
 portal/__pycache__/
 rotary/__pycache__/

@@ -42,7 +42,7 @@
 
                     <!-- Logo container-->
                     <div class="logo">
-                        <img src="{% static 'frontend/images/favirotary.png' %}" alt=""> ROTARY 4690
+                        <img src="{% static 'frontend/images/rotary50.png' %}" alt="" class="m-b-5"> ROTARY 4690
                     </div>
                     <!-- End Logo container-->
 
@@ -58,7 +58,7 @@
                                 <a href="{% url 'inicio' %}"><i class="md md-dashboard"></i>Inicio</a>
                             </li>
                             <li class="submenu">
-                                <a href="#"><i class="md md-person"></i>Registro</a>
+                                <a href="{% url 'participante' %}"><i class="md md-person"></i>Participantes</a>
                             </li>
                             <li class="submenu">
                                 <a href="{% url 'auth_logout' %}"><i class="md md-exit-to-app"></i>Salir</a>
@@ -74,13 +74,7 @@
 
         <div class="wrapper">
             <div class="container">
-
-              <!-- Page-Title -->
-                <div class="row">
-                    {% block contenido %}{% endblock %}
-                </div>
-
-
+                {% block contenido %}{% endblock %}
                 <!-- Footer -->
                 <footer class="footer text-right">
                     <div class="container">

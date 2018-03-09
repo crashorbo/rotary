@@ -5,7 +5,7 @@ from django.utils import timezone
 class Participante(models.Model):
     nombres = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=100)
-    nro_documento = models.CharField(max_length=20)
+    nro_documento = models.CharField(max_length=20, unique=True)
     ciudad = models.CharField(max_length=100)
     club = models.CharField(max_length=200)
     telefono = models.CharField(max_length=50)

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Participante {% endblock %}
+
+{% block contenido %}
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8">
+            <div class="card-box">
+                <h4 class="m-t-0 header-title"><b>Registro de Participante</b></h4>
+                <form class="form-horizontal" action="." method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-facebook text-uppercase waves-effect waves-light" type="submit">
+                        Guardar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
