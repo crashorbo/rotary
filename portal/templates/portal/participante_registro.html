@@ -10,9 +10,11 @@
                 <form class="form-horizontal" action="." method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button class="btn btn-facebook text-uppercase waves-effect waves-light" type="submit">
+                    <div class="g-recaptcha" data-sitekey="6LfHBkwUAAAAAHlssEwdkAEOI3Lk7fxOM_yd_gON"></div>
+                    <button class="btn btn-default text-uppercase waves-effect waves-light m-r-5" type="submit">
                         Guardar
                     </button>
+                    <a class="btn btn-inverse text-uppercase waves-effect waves-light m-r-5" href="{% url 'participante' %}">Cancelar</a>
                 </form>
             </div>
         </div>

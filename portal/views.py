@@ -11,7 +11,7 @@ def index(request):
     return render(request, 'portal/index.html')
 
 
-@login_required(login_url='/cuentas/login/')
+@login_required
 def inicio(request):
     return render(request, 'portal/inicio.html')
 
