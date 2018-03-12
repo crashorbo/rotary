@@ -16,3 +16,10 @@ class Participante(models.Model):
     def __str__(self):
         return '{} {}'.format(self.nombres, self.apellidos)
 
+
+class Pago(models.Model):
+    monto = models.DecimalField(max_digits=10, decimal_places=2)
+    detalle_deposito = models.TextField()
+    validado = models.BooleanField(default=False)
+    usuario = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    created_date = models.DateTimeField(default=timezone.now)

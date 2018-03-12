@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{% block titulo %}Participante{% endblock %}
+
+{% block contenido %}
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8">
+            <div class="card-box">
+                <h4 class="m-t-0 header-title"><b>Eliminar Participante</b></h4>
+                <form class="form-horizontal" action="." method="post">
+                    {% csrf_token %}
+                    <h3>¿Realmente desea eliminar el registro de {{ object }}?</h3>
+                    <button class="btn btn-danger text-uppercase waves-effect waves-light m-r-5" type="submit">
+                        Si Eliminar
+                    </button>
+                    <a class="btn btn-inverse text-uppercase waves-effect waves-light m-r-5" href="{% url 'participante' %}">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

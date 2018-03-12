@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse_lazy
 from django.utils.decorators import method_decorator
 
-from django.views.generic import CreateView, ListView, UpdateView
-from .models import Participante
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from .models import Participante, Pago
 from .forms import ParticipanteForm
 
 def index(request):
@@ -22,7 +22,10 @@ class ParticipanteList(ListView):
     context_object_name = 'participante_lista'
 
     def get_queryset(self, *args, **kwargs):
-        return Participante.objects.filter(usuario=self.request.user)
+        if self.request.user.is_staff:
+            return Participante.objects.all()
+        else:
+            return Participante.objects.filter(usuario=self.request.user)
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
@@ -57,3 +60,29 @@ class ParticipanteUpdate(UpdateView):
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super(ParticipanteUpdate, self).dispatch(*args, **kwargs)
+
+
+class ParticipanteDelete(DeleteView):
+    model = Participante
+    template_name = 'portal/participante_eliminar.html'
+    success_url = reverse_lazy('participante')
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ParticipanteDelete, self).dispatch(*args, **kwargs)
+
+
+class PagoList(ListView):
+    model = Pago
+    template_name = 'portal/pago.html'
+    context_object_name = 'pago_lista'
+
+    def get_queryset(self, *args, **kwargs):
+        if self.request.user.is_staff:
+            return Pago.objects.all()
+        else:
+            return Pago.objects.filter(usuario=self.request.user)
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(PagoList, self).dispatch(*args, **kwargs)
