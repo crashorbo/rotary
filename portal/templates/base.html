@@ -11,7 +11,7 @@
         <link rel="shortcut icon" href="{% static 'frontend/images/favirotary.png' %}">
 
         <title>Rotary | {% block titulo %}{% endblock %}</title>
-
+        {% block estilos %}{% endblock %}
         <link href="{% static 'backend/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
         <link href="{% static 'backend/css/core.css' %}" rel="stylesheet" type="text/css" />
         <link href="{% static 'backend/css/components.css' %}" rel="stylesheet" type="text/css" />
@@ -108,7 +108,6 @@
         <!-- end wrapper -->
 
 
-
         <!-- jQuery  -->
         <script src="{% static 'backend/js/jquery.min.js' %}"></script>
         <script src="{% static 'backend/js/bootstrap.min.js' %}"></script>
@@ -121,9 +120,9 @@
         <script src="{% static 'backend/js/jquery.nicescroll.js' %}"></script>
         <script src="{% static 'backend/js/jquery.scrollTo.min.js' %}"></script>
 
+        {% block javascript %}{% endblock %}
         <!-- App core js -->
-        <script src="{% static 'backend' %}"></script>
+        <script src="{% static 'backend/js/jquery.core.js' %}"></script>
         <script src="{% static 'backend/js/jquery.app.js' %}"></script>
-
     </body>
 </html>

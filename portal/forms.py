@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Participante
+from .models import Participante, Pago
 
 
 class ParticipanteForm(forms.ModelForm):
@@ -42,6 +42,41 @@ class ParticipanteForm(forms.ModelForm):
 
     def save(self, usuario=None):
         user_profile = super(ParticipanteForm, self).save(commit=False)
+        if usuario:
+            user_profile.usuario = usuario
+        user_profile.save()
+        return user_profile
+
+
+class PagoForm(forms.ModelForm):
+
+    class Meta:
+        model = Pago
+
+        fields = [
+            'monto',
+            'tipo_moneda',
+            'detalle_deposito',
+            'validado',
+            'created_date',
+        ]
+
+        labels = {
+            'monto': 'Monto a Pagar',
+            'tipo_moneda': 'Seleccione el tipo de Moneda',
+            'detalle_deposito': 'Detalle del Deposito',
+        }
+
+        widgets = {
+            'monto': forms.NumberInput(attrs={'class': 'form-control'}),
+            'tipo_moneda': forms.Select(attrs={'class': 'form-control'}),
+            'detalle_deposito': forms.Textarea(attrs={'class': 'form-control'}),
+            'validado': forms.HiddenInput(),
+            'created_date': forms.HiddenInput(),
+        }
+
+    def save(self, usuario=None):
+        user_profile = super(PagoForm, self).save(commit=False)
         if usuario:
             user_profile.usuario = usuario
         user_profile.save()

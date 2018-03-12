@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Pago {% endblock %}
+
+{% block contenido %}
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8">
+            <div class="card-box">
+                <h4 class="m-t-0 header-title"><b>Registro de Pago</b></h4>
+                <form class="form-horizontal" action="." method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-default text-uppercase waves-effect waves-light m-r-5" type="submit">
+                        Guardar
+                    </button>
+                    <a class="btn btn-inverse text-uppercase waves-effect waves-light m-r-5" href="{% url 'pago' %}">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

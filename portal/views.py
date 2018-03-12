@@ -5,7 +5,7 @@ from django.utils.decorators import method_decorator
 
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from .models import Participante, Pago
-from .forms import ParticipanteForm
+from .forms import ParticipanteForm, PagoForm
 
 def index(request):
     return render(request, 'portal/index.html')
@@ -86,3 +86,43 @@ class PagoList(ListView):
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super(PagoList, self).dispatch(*args, **kwargs)
+
+
+class PagoCreate(CreateView):
+    model = Pago
+    form_class = PagoForm
+    template_name = 'portal/pago_form.html'
+    success_url = reverse_lazy('pago')
+
+    def form_valid(self, form):
+        form.save(self.request.user)
+        return super(PagoCreate, self).form_valid(form)
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(PagoCreate, self).dispatch(*args, **kwargs)
+
+
+class PagoUpdate(UpdateView):
+    model = Pago
+    form_class = PagoForm
+    template_name = 'portal/pago_form.html'
+    success_url = reverse_lazy('pago')
+
+    def form_valid(self, form):
+        form.save(self.request.user)
+        return super(PagoUpdate, self).form_valid(form)
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(PagoUpdate, self).dispatch(*args, **kwargs)
+
+
+class PagoDelete(DeleteView):
+    model = Pago
+    template_name = 'portal/pago_eliminar.html'
+    success_url = reverse_lazy('pago')
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(PagoDelete, self).dispatch(*args, **kwargs)

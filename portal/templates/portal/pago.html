@@ -1,17 +1,98 @@
 {% extends 'base.html' %}
+{% load pago_extras %}
+{% load static %}
 
 {% block titulo %} Pago {% endblock %}
+
+{% block estilos %}
+    <!-- DataTables -->
+        <link href="{% static 'backend/plugins/datatables/jquery.dataTables.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'backend/plugins/datatables/buttons.bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'backend/plugins/datatables/fixedHeader.bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'backend/plugins/datatables/responsive.bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'backend/plugins/datatables/scroller.bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'backend/plugins/datatables/dataTables.colVis.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'backend/plugins/datatables/dataTables.bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'backend/plugins/datatables/fixedColumns.dataTables.min.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
 
 {% block contenido %}
     <div class="row">
         <div class="col-sm-12">
             <div class="btn-group pull-right m-t-15">
-                <a class="btn btn-default dropdown-toggle waves-effect" href="#">Registrar <span class="m-l-5"><i class="fa fa-money"></i></span></a>
+                <a class="btn btn-default dropdown-toggle waves-effect" href="{% url 'pago_create' %}">Registrar <span class="m-l-5"><i class="fa fa-money"></i></span></a>
             </div>
-            <h4 class="page-title">Pagos</h4>
+        </div>
+    </div>
+    <div class="row m-t-10">
+        <div class="col-sm-12">
+            <div class="card-box table-responsive">
+                <h4 class="m-t-0 header-title"><b>Pagos Realizados</b></h4>
+                    <table id="datatable" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>MONTO</th>
+                                <th>TIPO DE MONEDA</th>
+                                <th>DETALLE DEL DEPOSITO</th>
+                                <th>ESTADO</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                        {% for pago in pago_lista %}
+                            <tr>
+                                <td>{{ pago.monto }}</td>
+                                <td>{{ pago.tipo_moneda | tipo_moneda }}</td>
+                                <td>{{ pago.detalle_deposito }}</td>
+                                <td class="{% if pago.validado %}text-success{% else %}text-danger{% endif %}">{{ pago.validado | estado }}</td>
+                                <td>
+                                    {% if not pago.validado %}
+                                        <a href="{% url 'pago_update' pk=pago.id %}" class="btn btn-warning btn-xs">Editar</a>
+                                        <a href="{% url 'pago_delete' pk=pago.id %}" class="btn btn-danger btn-xs">Eliminar</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="row">
 
     </div>
 {% endblock %}
+
+{% block javascript %}
+    <!-- jQuery  -->
+        <script src="{% static 'backend/js/jquery.min.js' %}"></script>
+        <script src="{% static 'backend/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'backend/js/detect.js' %}"></script>
+        <script src="{% static 'backend/js/fastclick.js' %}"></script>
+        <script src="{% static 'backend/js/jquery.slimscroll.js' %}"></script>
+        <script src="{% static 'backend/js/jquery.blockUI.js' %}"></script>
+        <script src="{% static 'backend/js/waves.js' %}"></script>
+        <script src="{% static 'backend/js/wow.min.js' %}"></script>
+        <script src="{% static 'backend/js/jquery.nicescroll.js' %}"></script>
+        <script src="{% static 'backend/js/jquery.scrollTo.min.js' %}"></script>
+
+        <script src="{% static 'backend/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/dataTables.bootstrap.js' %}"></script>
+
+        <script src="{% static 'backend/plugins/datatables/dataTables.buttons.min.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/buttons.bootstrap.min.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/jszip.min.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/pdfmake.min.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/vfs_fonts.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/buttons.html5.min.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/buttons.print.min.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/dataTables.fixedHeader.min.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/dataTables.keyTable.min.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/dataTables.responsive.min.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/responsive.bootstrap.min.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/dataTables.scroller.min.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/dataTables.colVis.js' %}"></script>
+        <script src="{% static 'backend/plugins/datatables/dataTables.fixedColumns.min.js' %}"></script>
+
+        <script src="{% static 'backend/pages/datatables.init.js' %}"></script>
+{% endblock %}s
