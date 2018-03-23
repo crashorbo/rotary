@@ -26,7 +26,7 @@ SECRET_KEY = 'h!r5(6_dkny)$z%28uwqj3sa$yqjs#rf&b3ggxrdgsj5x=*^hb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["www.rotarysanmiguel.org", "localhost"]
+ALLOWED_HOSTS = ["www.rotarysanmiguel.org", "localhost", ".rotarysanmiguel.org"]
 
 
 # Application definition

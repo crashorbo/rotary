@@ -24,6 +24,9 @@
             </div>
         </div>
     </div>
+    {% if request.user.is_staff %}
+
+    {% else %}
     <div class="row m-t-10">
         <div class="col-sm-12">
             <div class="card-box table-responsive">
@@ -58,9 +61,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
-
-    </div>
+    {% endif %}
 {% endblock %}
 
 {% block javascript %}
