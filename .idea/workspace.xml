@@ -2,9 +2,143 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c752f296-c6f1-47f5-8202-1e4f8fd1cd01" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/animate.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/bootstrap.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/bootstrap/bootstrap-grid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/bootstrap/bootstrap-reboot.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/bootstrap/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/jquery.DonutWidget.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/jquerysctipttop.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/linearicons.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/magnific-popup.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/main.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/main.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/nice-select.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/css/theme/pages.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/fonts/Linearicons-Free.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/fonts/Linearicons-Free.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/fonts/Linearicons-Free.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/fonts/Linearicons-Free.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/fonts/Linearicons-Free.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/about1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/about2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/angelcarnaval.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/bisa50.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/callaction-bg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/casco.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/cascoruro.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/d.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/disabled-check.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/disabled-radio.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/f1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/f2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/f3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/f4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/f5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/f6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/f7.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/f8.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/g1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/g2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/g3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/g4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/g5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/g6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/g7.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/g8.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/primary-check.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/primary-radio.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/success-check.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/elements/success-radio.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/header-bg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/hoteleden.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/hotelfloresplaza.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/hotelgalaxia.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/hotelregal.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/hotelsamaywasi.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/l1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/l2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/l3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/l4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/l5.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/logov.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/play-icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/presidente.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/s1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/s2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/video-bg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/img/virgenoruro.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/easing.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/hoverIntent.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/jquery.ajaxchimp.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/jquery.magnific-popup.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/jquery.nice-select.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/mail-script.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/main.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/parallax.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/slick.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/superfish.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/superfish.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/vendor/bootstrap.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/static/frontend/js/vendor/jquery-2.2.4.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/portal/templates/portal/portal.html" />
       <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/css/bootstrap.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/css/bootstrap.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/portal/static/frontend/css/font-awesome.min.css" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/css/owl.carousel.css" afterPath="$PROJECT_DIR$/portal/static/frontend/css/owl.carousel.css" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/css/owl.theme.default.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/css/style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/portal/static/frontend/fonts/FontAwesome.otf" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/portal/static/frontend/fonts/fontawesome-webfont.eot" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/portal/static/frontend/fonts/fontawesome-webfont.svg" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/portal/static/frontend/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/portal/static/frontend/fonts/fontawesome-webfont.woff" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/portal/static/frontend/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/RD4690.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/RD4690borde.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/RD4690bordelogo.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/RMD.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/RMDborde.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/Rotarylogo300.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/bg.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/clients/converse.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/clients/google.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/clients/instagram.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/clients/microsoft.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/conferencia01.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/favicon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/favirotary.png" afterPath="$PROJECT_DIR$/portal/static/frontend/img/favirotary.png" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/fondoreal.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/hoteleden.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/mac_1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/mac_2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/mac_3.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/preloader.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/quote-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/rotary45.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/rotary50.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/rotarycompleto.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/user.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/user2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/images/user3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/js/SmoothScroll.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/js/bootstrap.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/js/jquery-2.1.4.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/js/jquery.app.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/js/jquery.easing.1.3.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/js/jquery.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/portal/static/frontend/js/jquery.sticky.js" afterPath="$PROJECT_DIR$/portal/static/frontend/js/jquery.sticky.js" />
+      <change beforePath="$PROJECT_DIR$/portal/views.py" afterPath="$PROJECT_DIR$/portal/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,30 +156,18 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portal/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="127" column="58" lean-forward="false" selection-start-line="127" selection-start-column="58" selection-end-line="127" selection-end-column="58" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pago_eliminar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/portal/templates/portal/pago_eliminar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="110" lean-forward="false" selection-start-line="16" selection-start-column="110" selection-end-line="16" selection-end-column="110" />
+            <state relative-caret-position="51">
+              <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manage.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="manage.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+              <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
               <folding>
                 <element signature="e#22#31#0" expanded="true" />
               </folding>
@@ -53,33 +175,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/portal/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="14" column="58" lean-forward="false" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pago.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/portal/templates/portal/pago.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rotary/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+            <state relative-caret-position="339">
+              <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
               <folding>
                 <element signature="e#308#317#0" expanded="true" />
               </folding>
@@ -110,8 +210,33 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portal/templates/portal/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="126" column="19" lean-forward="false" selection-start-line="125" selection-start-column="18" selection-end-line="126" selection-end-column="19" />
+            <state relative-caret-position="306">
+              <caret line="143" column="60" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="281" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="portal.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/portal/templates/portal/portal.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="147" column="168" lean-forward="false" selection-start-line="147" selection-start-column="168" selection-end-line="147" selection-end-column="168" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#19156#19162#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/portal/static/frontend/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-192">
+              <caret line="157" column="34" lean-forward="false" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -121,7 +246,17 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="7" />
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inicio.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/portal/templates/portal/inicio.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -140,6 +275,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>reverse</find>
+      <find>owl</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,7 +298,6 @@
         <option value="$PROJECT_DIR$/portal/templates/base.html" />
         <option value="$PROJECT_DIR$/portal/templatetags/__init__.py" />
         <option value="$PROJECT_DIR$/portal/templatetags/pago_extras.py" />
-        <option value="$PROJECT_DIR$/portal/views.py" />
         <option value="$PROJECT_DIR$/portal/templates/portal/pago_eliminar.html" />
         <option value="$PROJECT_DIR$/portal/urls.py" />
         <option value="$PROJECT_DIR$/portal/templates/portal/pago.html" />
@@ -170,6 +305,8 @@
         <option value="$PROJECT_DIR$/portal/templates/portal/index.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/manage.py" />
+        <option value="$PROJECT_DIR$/portal/views.py" />
+        <option value="$PROJECT_DIR$/portal/templates/portal/portal.html" />
       </list>
     </option>
   </component>
@@ -234,7 +371,7 @@
               <item name="portal" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
@@ -268,6 +405,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Proyectos\Django\rotary\src\portal\static\frontend\img" />
+      <recent name="C:\Proyectos\Django\rotary\src\portal\static\frontend" />
       <recent name="C:\Proyectos\Django\rotary\src\portal\static\frontend\images" />
       <recent name="D:\python\rotary\src\portal\static\frontend\images" />
     </key>
@@ -326,14 +465,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26891893" sideWeight="0.5028653" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24770643" sideWeight="0.49713466" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24770643" sideWeight="0.49713466" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2701389" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -364,30 +502,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/portal/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="108" lean-forward="false" selection-start-line="60" selection-start-column="108" selection-end-line="60" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding>
-            <element signature="e#22#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portal/templates/portal/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1921">
@@ -400,7 +514,7 @@
         <state relative-caret-position="85">
           <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -462,7 +576,7 @@
         <state relative-caret-position="17">
           <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -558,13 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/templates/portal/inicio.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portal/templates/registration/registro.html" />
     <entry file="file://$PROJECT_DIR$/portal/static/frontend/images/bg.jpg">
       <provider selected="true" editor-type-id="images">
@@ -638,17 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="74" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="127" column="58" lean-forward="false" selection-start-line="127" selection-start-column="58" selection-end-line="127" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -657,14 +753,14 @@
         <state relative-caret-position="187">
           <caret line="14" column="58" lean-forward="false" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/portal/templates/portal/pago_eliminar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="0">
           <caret line="16" column="110" lean-forward="false" selection-start-line="16" selection-start-column="110" selection-end-line="16" selection-end-column="110" />
           <folding />
         </state>
@@ -679,16 +775,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt" />
-    <entry file="file://$PROJECT_DIR$/rotary/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-          <folding>
-            <element signature="e#308#317#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rotary/serverset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1972">
@@ -705,10 +791,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/templates/portal/index.html">
+    <entry file="file://$PROJECT_DIR$/rotary/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="126" column="19" lean-forward="false" selection-start-line="125" selection-start-column="18" selection-end-line="126" selection-end-column="19" />
+        <state relative-caret-position="339">
+          <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <folding>
+            <element signature="e#308#317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/static/frontend/js/vendor/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -716,7 +812,23 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="7" />
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/templates/portal/inicio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/templates/portal/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="143" column="60" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="281" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -724,9 +836,38 @@
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding>
             <element signature="e#22#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/static/frontend/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-192">
+          <caret line="157" column="34" lean-forward="false" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/templates/portal/portal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="147" column="168" lean-forward="false" selection-start-line="147" selection-start-column="168" selection-end-line="147" selection-end-column="168" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#19156#19162#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

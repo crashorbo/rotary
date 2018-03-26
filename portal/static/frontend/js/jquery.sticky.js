@@ -17,7 +17,8 @@
       className: 'is-sticky',
       wrapperClassName: 'sticky-wrapper',
       center: false,
-      getWidthFrom: ''
+      getWidthFrom: '',
+      responsiveWidth: false
     },
     $window = $(window),
     $document = $(document),
@@ -37,9 +38,10 @@
         if (scrollTop <= etse) {
           if (s.currentTop !== null) {
             s.stickyElement
+              .css('width', '')
               .css('position', '')
               .css('top', '');
-            s.stickyElement.parent().removeClass(s.className);
+            s.stickyElement.trigger('sticky-end', [s]).parent().removeClass(s.className);
             s.currentTop = null;
           }
         }
@@ -53,6 +55,7 @@
           }
           if (s.currentTop != newTop) {
             s.stickyElement
+              .css('width', s.stickyElement.width())
               .css('position', 'fixed')
               .css('top', newTop);
 
@@ -60,7 +63,7 @@
               s.stickyElement.css('width', $(s.getWidthFrom).width());
             }
 
-            s.stickyElement.parent().addClass(s.className);
+            s.stickyElement.trigger('sticky-start', [s]).parent().addClass(s.className);
             s.currentTop = newTop;
           }
         }
@@ -68,6 +71,13 @@
     },
     resizer = function() {
       windowHeight = $window.height();
+
+      for (var i = 0; i < sticked.length; i++) {
+        var s = sticked[i];
+        if (typeof s.getWidthFrom !== 'undefined' && s.responsiveWidth === true) {
+          s.stickyElement.css('width', $(s.getWidthFrom).width());
+        }
+      }
     },
     methods = {
       init: function(options) {
@@ -99,7 +109,8 @@
             currentTop: null,
             stickyWrapper: stickyWrapper,
             className: o.className,
-            getWidthFrom: o.getWidthFrom
+            getWidthFrom: o.getWidthFrom,
+            responsiveWidth: o.responsiveWidth
           });
         });
       },
@@ -109,7 +120,7 @@
           var unstickyElement = $(this);
 
           var removeIdx = -1;
-          for (var i = 0; i < sticked.length; i++) 
+          for (var i = 0; i < sticked.length; i++)
           {
             if (sticked[i].stickyElement.get(0) == unstickyElement.get(0))
             {

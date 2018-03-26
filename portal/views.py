@@ -8,7 +8,7 @@ from .models import Participante, Pago
 from .forms import ParticipanteForm, PagoForm
 
 def index(request):
-    return render(request, 'portal/index.html')
+    return render(request, 'portal/portal.html')
 
 
 @login_required

@@ -1,0 +1,406 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'frontend/img/favirotary.png' %}">
+    <!-- Author Meta -->
+    <meta name="author" content="codepixer">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Conference</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+        <!--
+        CSS
+        ============================================= -->
+        <link rel="stylesheet" href="{% static 'frontend/css/linearicons.css' %}">
+        <link rel="stylesheet" href="{% static 'frontend/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'frontend/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'frontend/css/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'frontend/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'frontend/css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'frontend/css/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'frontend/css/main.css' %}">
+    </head>
+    <body>
+
+          <header id="header">
+            <div class="container">
+                <div class="row align-items-center justify-content-between d-flex">
+                  <div id="logo">
+                    <a href="index.html"><img src="{% static 'frontend/img/logo.png' %}" alt="" title="" /></a>
+                  </div>
+                  <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                      <li class="menu-active"><a href="#home">Inicio</a></li>
+                      <li><a href="#videos">Presentacion</a></li>
+                      <li><a href="#cronograma">Cronograma</a></li>
+                      <li><a href="#hoteles">Hoteles</a></li>
+                      <li><a class="ticker-btn" href="#precios">Inscribete</a></li>
+                    </ul>
+                  </nav><!-- #nav-menu-container -->
+                </div>
+            </div>
+          </header><!-- #header -->
+
+
+        <!-- start banner Area -->
+        <section class="banner-area relative" id="home">
+            <div class="overlay overlay-bg"></div>
+            <div class="container">
+                <div class="row fullscreen d-flex align-items-center justify-content-center">
+                    <div class="banner-content col-lg-9 col-md-12">
+                        <h6>LXXIX CONFERENCIA DEL DISTRITO 4690</h6>
+                        <h2 class="text-white">
+                            EGD Wilson Sandy Antezana
+                        </h2>
+                        <div class="countdown">
+                            <div id="timer" class="text-white"></div>
+                        </div>
+                        <h4><span class="lnr lnr-calendar-full"></span>  Mayo 31 - Junio 3, 2018</h4>
+                        <h4><span class="lnr lnr-map"></span>  Hotel "Eden" - c. Bolívar Nro. 777, Esq. Presidente Montes. Plaza Principal - Oruro - Bolivia</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End banner Area -->
+
+        <!-- Start home-video Area -->
+        <section class="home-video-area">
+            <div class="container-fluid">
+                <div class="row justify-content-end align-items-center">
+                    <div class="col-lg-4 no-padding about-right">
+                        <p class="top-title">Rotary Distrito 4690</p>
+                        <h1>Gobernador</h1>
+                        <h3>Jorge Encinas Cladera</h3>
+                        <p>
+                            Con el Presidente de Rotary International Ian Riseley , del club rotario de Sandringham, Australia y su esposa, Juliet se encuentra el Gobernador del Distrito 4690 Jorge Encinas Cladera del Rotary Club San Miguel de Oruro y su esposa Silvia Mercado de Encinas.
+                        </p>
+                    </div>
+                    <section class="video-area col-lg-6 no-padding">
+                        <div class="overlay overlay-bg"></div>
+                        <div class="containers">
+                            <div class="video-content">
+                                <img class="img-fluid" src="{% static 'frontend/img/presidente.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <!-- End home-aboutus Area -->
+
+
+        <!-- Start home-aboutus Area -->
+        <section class="home-aboutus-area">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 no-padding about-left">
+                        <img class="img-fluid" src="{% static 'frontend/img/casco.png' %}" alt="">
+                    </div>
+                    <div class="col-lg-5 no-padding about-right">
+                        <p class="top-title">Ciudad de Oruro - Bolivia</p>
+                        <h1 class="text-white">Capital del<br>
+                        Folklore de Bolivia</h1>
+                        <p>
+                            Este maravilloso destino turístico de gran riqueza folklórica, precolombina, étnica y natural está al oeste del país, en el altiplano central, atravesado por la Cordillera de los Andes, sobre una altura promedio de 3.700 metros sobre el nivel del mar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End home-aboutus Area -->
+
+        <!-- Start video-sec Area -->
+        <section class="video-sec-area section-gap" id="videos">
+            <div class="container">
+                <div class="row justify-content-center align-items-center ">
+                    <div class="col-lg-6 video-left">
+                        <h6>Rotary Distrito 4690</h6>
+                        <h1>Ven y partipa de <br>
+                            la conferencia</h1>
+                        <p><span>Escuchemos la presentacion por nuestro gobernador</span></p>
+                        <p>
+
+                        </p>
+                        <a class="primary-btn" href="#precios">Inscribete Ahora</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="active-video-carusel">
+                            <div class="item video-right justify-content-center align-items-center d-flex" style="background:url({% static 'frontend/img/video-bg.jpg'%}) no-repeat center;background-size: cover;">
+                            <div class="overlay overlay-bg"></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid" src="{% static 'frontend/img/play-icon.png' %}" alt=""></a>
+                            </div>
+                            <div class="item video-right justify-content-center align-items-center d-flex" style="background:url({% static 'frontend/img/video-bg.jpg'%}) no-repeat center;background-size: cover;">
+                            <div class="overlay overlay-bg"></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid" src="{% static 'frontend/img/play-icon.png' %}" alt=""></a>
+                            </div>
+                            <div class="item video-right justify-content-center align-items-center d-flex" style="background:url({% static 'frontend/img/video-bg.jpg'%}) no-repeat center;background-size: cover;">
+                            <div class="overlay overlay-bg"></div>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid" src="{% static 'frontend/img/play-icon.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End video-sec Area -->
+
+        <!-- Start schedule Area -->
+        <section class="schedule-area pb-100 mt-80" id="cronograma">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="menu-content pb-70 col-lg-8">
+                        <div class="title text-center">
+                            <h1 class="mb-10">Cronograma de Actividades</h1>
+                            <p>
+                                <button class="btn btn-default mr-10">Mayo 31</button>
+                                <button class="btn btn-default mr-10">Junio 1</button>
+                                <button class="btn btn-default mr-10">Junio 2</button>
+                                <button class="btn btn-default mr-10">Junio 3</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="table-wrap col-lg-12">
+                        <table class="schdule-table table table-bordered">
+                              <thead class="thead-light">
+                                <tr>
+                                  <th class="head" scope="col">Sesion</th>
+                                  <th class="head" scope="col">Orador</th>
+                                  <th class="head" scope="col">lugar</th>
+                                  <th class="head" scope="col">Hora</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                    <td>Recepcion de delegaciones, inscripcion de participantes y entrega de materiales</td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
+                                    <td>08:30</td>
+                                    </tr>
+                                <tr>
+                                  <td>PETS Seminarios para presidentes, Secretarios y Tesoreros electos a cargo del gobernador electo</td>
+                                  <td>Gobernador</td>
+                                  <td>Salon "La Cienaga" piso 2</td>
+                                  <td>09:00</td>
+                                </tr>
+                                <tr>
+                                  <td>Foro Femenino de liderzago Rotario</td>
+                                  <td>N/A</td>
+                                  <td>Salon "Aurora" Piso 6</td>
+                                  <td>09:00</td>
+                                </tr>
+                                <tr>
+                                  <td>Asamblea de Distrito</td>
+                                  <td>N/A</td>
+                                  <td>Salon "La Cienaga" piso 2</td>
+                                  <td>15:00</td>
+                                </tr>
+                                <tr>
+                                  <td>Solemne acto de inaguracion de la LXXIX CONFERENCIA "EGD Wilson Sandy Antezana"</td>
+                                  <td>N/A</td>
+                                  <td>Salon "Paraiso" Subterraneo</td>
+                                  <td>19:00</td>
+                                </tr>
+                              </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End schedule Area -->
+
+        <!-- Start price Area -->
+        <section class="price-area section-gap" id="precios">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="menu-content pb-70 col-lg-8">
+                        <div class="title text-center">
+                            <h1 class="mb-10">Depositos a la cuenta: 6105154010 <img src="{% static 'frontend/img/bisa50.png' %}" alt=""> </h1>
+                            <p>Estos precios solo son válidos hasta el 30 de Abril</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 single-price">
+                        <div class="top-part">
+                            <h1 class="package-no">01</h1>
+                            <h4>SOCIO/A Y CONYUGUE</h4>
+                            <p>Pareja</p>
+                        </div>
+                        <div class="package-list">
+                            <ul>
+                                <li>Deposito Banco BISA</li>
+                                <li>Precio valido hasta 30 de Abril</li>
+                                <li>200.00 USD</li>
+                            </ul>
+                        </div>
+                        <div class="bottom-part">
+                            <h1>1400.00 Bs.</h1>
+                            <a class="price-btn text-uppercase" href="#">Inscribete</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 single-price">
+                        <div class="top-part">
+                            <h1 class="package-no">02</h1>
+                            <h4>SOCIO/A</h4>
+                            <p>Individual</p>
+                        </div>
+                        <div class="package-list">
+                            <ul>
+                                <li>Deposito Banco BISA</li>
+                                <li>Precio valido hasta 30 de Abril</li>
+                                <li>108.00 USD</li>
+                            </ul>
+                        </div>
+                        <div class="bottom-part">
+                            <h1>750.00 Bs.</h1>
+                            <a class="price-btn text-uppercase" href="#">Inscribete</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 single-price">
+                        <div class="top-part">
+                            <h1 class="package-no">03</h1>
+                            <h4>DAMA ROTARIA</h4>
+                            <p>Individual</p>
+                        </div>
+                        <div class="package-list">
+                            <ul>
+                                    <li>Deposito Banco BISA</li>
+                                    <li>Precio valido hasta 30 de Abril</li>
+                                    <li>93.00 USD</li>
+                            </ul>
+                        </div>
+                        <div class="bottom-part">
+                            <h1>650.00 Bs.</h1>
+                            <a class="price-btn text-uppercase" href="#">Inscribete</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 single-price">
+                        <div class="top-part">
+                            <h1 class="package-no">04</h1>
+                            <h4>ROTARACT/INTERACT</h4>
+                            <p>Individual</p>
+                        </div>
+                        <div class="package-list">
+                            <ul>
+                                    <li>Deposito Banco BISA</li>
+                                    <li>Precio valido hasta 30 de Abril</li>
+                                    <li>79.00 USD</li>
+                            </ul>
+                        </div>
+                        <div class="bottom-part">
+                            <h1>550.00 Bs.</h1>
+                            <a class="price-btn text-uppercase" href="#">Inscribete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End price Area -->
+
+        <!-- Start brand Area -->
+        <section class="brand-area section-gap" id="hoteles">
+            <div class="container">
+                <div class="row logo-wrap">
+                    <a class="col single-img" href="http://www.hotelessamaywasi.com" target="_blank">
+                        <img class="d-block mx-auto" src="{% static 'frontend/img/hotelsamaywasi.png' %}" alt="">
+                    </a>
+                    <a class="col single-img" href="http://www.hotelgalaxia.com.bo/" target="_blank">
+                        <img class="d-block mx-auto" src="{% static 'frontend/img/hotelgalaxia.png' %}" alt="">
+                    </a>
+                    <a class="col single-img" href="http://www.hoteledenbolivia.com/" target="_blank">
+                        <img class="d-block mx-auto" src="{% static 'frontend/img/hoteleden.png' %}" alt="">
+                    </a>
+                    <a class="col single-img" href="http://www.floresplazahotel.com/" target="_blank">
+                        <img class="d-block mx-auto" src="{% static 'frontend/img/hotelfloresplaza.png' %}" alt="">
+                    </a>
+                    <a class="col single-img" href="http://www.hotelregaloruro.com/" target="_blank">
+                        <img class="d-block mx-auto" src="{% static 'frontend/img/hotelregal.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- End brand Area -->
+
+
+        <!-- Start callaction Area -->
+        <section class="callaction-area relative section-gap">
+            <div class="overlay overlay-bg"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h1 class="text-white">No esperes a ultima hora</h1>
+                        <p>
+                            Inscribete y participa de esta esperada conferencia de Rotary Distrito 4690
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End callaction Area -->
+
+
+        <!-- start footer Area -->
+        <footer class="footer-area section-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6>Acerca de nosotros</h6>
+                            <p>
+                                Puesto que ejercemos variadas profesiones y provenimos de culturas y países distintos, Rotary percibe la realidad desde una perspectiva excepcional. Por otra parte, el espíritu de servicio a los demás nos impulsa a realizar obras notables.
+                            </p>
+                            <p class="footer-text">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados.
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 social-widget">
+                        <div class="single-footer-widget">
+                            <h6>Siguenos</h6>
+                            <p>por nuestras redes sociales</p>
+                            <div class="footer-social d-flex align-items-center">
+                                <a href="https://www.facebook.com/RotaySanMiguel" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End footer Area -->
+
+        <script src="{% static 'frontend/js/vendor/jquery-2.2.4.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="{% static 'frontend/js/vendor/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+        <script src="{% static 'frontend/js/easing.min.js'%}"></script>
+        <script src="{% static 'frontend/js/hoverIntent.js' %}"></script>
+        <script src="{% static 'frontend/js/superfish.min.js' %}"></script>
+        <script src="{% static 'frontend/js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'frontend/js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'frontend/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'frontend/js/jquery.sticky.js' %}"></script>
+        <script src="{% static 'frontend/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'frontend/js/parallax.min.js' %}"></script>
+        <script src="{% static 'frontend/js/mail-script.js' %}"></script>
+        <script src="{% static 'frontend/js/main.js' %}"></script>
+    </body>
+</html>
+
+
+
