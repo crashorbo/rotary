@@ -24,4 +24,4 @@ class Participante(models.Model):
         return '{} {}'.format(self.nombres, self.apellidos)
 
 class Inscripcion(models.Model):
-    tipo = models.CharField()
+    tipo = models.CharField(max_length=100)
