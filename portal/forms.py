@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Participante, Pago
+from .models import Participante
 
 
 class ParticipanteForm(forms.ModelForm):
@@ -47,7 +47,7 @@ class ParticipanteForm(forms.ModelForm):
         user_profile.save()
         return user_profile
 
-
+"""
 class PagoForm(forms.ModelForm):
 
     class Meta:
@@ -81,3 +81,4 @@ class PagoForm(forms.ModelForm):
             user_profile.usuario = usuario
         user_profile.save()
         return user_profile
+"""

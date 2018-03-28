@@ -31,7 +31,13 @@ $(document).ready(function(){
         preloader: false,
         fixedContentPos: false
     });
-
+    $('.insone-btn').magnificPopup({
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false
+    });
 
   // Initiate superfish on nav menu
   $('.nav-menu').superfish({

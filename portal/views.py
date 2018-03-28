@@ -4,8 +4,8 @@ from django.core.urlresolvers import reverse_lazy
 from django.utils.decorators import method_decorator
 
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
-from .models import Participante, Pago
-from .forms import ParticipanteForm, PagoForm
+from .models import Participante
+from .forms import ParticipanteForm
 
 def index(request):
     return render(request, 'portal/portal.html')
@@ -71,7 +71,7 @@ class ParticipanteDelete(DeleteView):
     def dispatch(self, *args, **kwargs):
         return super(ParticipanteDelete, self).dispatch(*args, **kwargs)
 
-
+"""
 class PagoList(ListView):
     model = Pago
     template_name = 'portal/pago.html'
@@ -126,3 +126,4 @@ class PagoDelete(DeleteView):
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super(PagoDelete, self).dispatch(*args, **kwargs)
+"""

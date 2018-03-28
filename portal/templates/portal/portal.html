@@ -137,7 +137,7 @@
                         <div class="active-video-carusel">
                             <div class="item video-right justify-content-center align-items-center d-flex" style="background:url({% static 'frontend/img/video-bg.jpg'%}) no-repeat center;background-size: cover;">
                             <div class="overlay overlay-bg"></div>
-                            <a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid" src="{% static 'frontend/img/play-icon.png' %}" alt=""></a>
+                            <a class="play-btn" href="https://www.youtube.com/watch?v=vIfPZjLOau0"><img class="img-fluid" src="{% static 'frontend/img/play-icon.png' %}" alt=""></a>
                             </div>
                             <div class="item video-right justify-content-center align-items-center d-flex" style="background:url({% static 'frontend/img/video-bg.jpg'%}) no-repeat center;background-size: cover;">
                             <div class="overlay overlay-bg"></div>
@@ -301,13 +301,40 @@
                         </div>
                         <div class="bottom-part">
                             <h1>550.00 Bs.</h1>
-                            <a class="price-btn text-uppercase" href="#">Inscribete</a>
+                            <a type="button" id="rotaract" class="price-btn text-uppercase insone-btn" data-toggle="modal" data-target="#modal-uno">Inscribete</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- End price Area -->
+
+        <!-- Modal uno -->
+        <div class="modal" id="modal-uno" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{% url '' %}" method="post">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal uno -->
+
 
         <!-- Start brand Area -->
         <section class="brand-area section-gap" id="hoteles">
@@ -332,7 +359,6 @@
             </div>
         </section>
         <!-- End brand Area -->
-
 
         <!-- Start callaction Area -->
         <section class="callaction-area relative section-gap">
