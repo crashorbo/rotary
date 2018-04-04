@@ -1,0 +1,27 @@
+<form action="{% url 'registros_ajax' %}" method="post" id="inscripcion-form">
+    {% csrf_token %}
+    {{ inscripcion_form.as_table }}
+    <hr>
+    {{ participante_forms.as_table }}
+    <hr>
+    <button class="btn ticker-btn" type="submit">Registrar</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+</form>
+<script>
+    $('#inscripcion-form').on('submit', function (e) {
+        e.preventDefault();
+        var $formData = $(this).serialize();
+        var $thisUrl = $(this).attr('action');
+        var $thisMethod = $(this).attr('method');
+        $.ajax({
+            method: $thisMethod,
+            url: $thisUrl,
+            data: $formData,
+            success: handleFormSuccess
+        })
+    });
+
+    function handleFormSuccess(data, textStatus, jqXHR){
+        $("#registro").html(data);
+    }
+</script>

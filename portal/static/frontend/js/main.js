@@ -16,6 +16,26 @@ $(document).ready(function(){
           $('select').niceSelect();
     };
 
+    $('#rotaract').on('click', function () {
+        $.ajax({
+            method: "get",
+            url:  "/inscripcion-ajax/",
+            success: function(data){
+                $("#registro").html(data)
+            }
+        })
+    });
+
+    $('#rotaracts').on('click', function () {
+        $.ajax({
+            method: "get",
+            url:  "/inscripcions-ajax/",
+            success: function(data){
+                $("#registro").html(data)
+            }
+        })
+    });
+
     $('.img-pop-up').magnificPopup({
         type: 'image',
         gallery:{
@@ -31,14 +51,6 @@ $(document).ready(function(){
         preloader: false,
         fixedContentPos: false
     });
-    $('.insone-btn').magnificPopup({
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false
-    });
-
   // Initiate superfish on nav menu
   $('.nav-menu').superfish({
     animation: {

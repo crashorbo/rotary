@@ -1,129 +1,54 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-from django.core.urlresolvers import reverse_lazy
-from django.utils.decorators import method_decorator
 
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView
-from .models import Participante
-from .forms import ParticipanteForm
+from django.views.generic import TemplateView, FormView
+from .forms import InscripcionForm, ParticipanteFormset, ParticipantesFormset
 
-def index(request):
-    return render(request, 'portal/portal.html')
+class IndexView(TemplateView):
+    template_name = 'index.html'
 
 
-@login_required
-def inicio(request):
-    return render(request, 'portal/inicio.html')
+class RegistroView(FormView):
+    form_class = ParticipanteFormset
+    template_name = 'forms/registro_ajax.html'
 
 
-class ParticipanteList(ListView):
-    model = Participante
-    template_name = 'portal/participante.html'
-    context_object_name = 'participante_lista'
+def create_parent(request):
+    if request.method == 'POST':
+        inscripcion_form = InscripcionForm(request.POST, request.FILES, prefix='inscripcion')
+        participante_form = ParticipanteFormset(request.POST, request.FILES, prefix='participantes')
 
-    def get_queryset(self, *args, **kwargs):
-        if self.request.user.is_staff:
-            return Participante.objects.all()
-        else:
-            return Participante.objects.filter(usuario=self.request.user)
+        inscripcion_valid = inscripcion_form.is_valid()
+        participante_valid = participante_form.is_valid()
 
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(ParticipanteList, self).dispatch(*args, **kwargs)
+        if inscripcion_valid and participante_valid:
+            inscripcion = inscripcion_form.save()
+            participante_form.instance = inscripcion
+            participante_form.save()
+            return render(request, 'forms/form_success.html')
+    else:
+        inscripcion_form = InscripcionForm(prefix='inscripcion')
+        participante_form = ParticipanteFormset(prefix='participantes')
 
-
-class ParticipanteCreate(CreateView):
-    model = Participante
-    form_class = ParticipanteForm
-    template_name = 'portal/participante_registro.html'
-    success_url = reverse_lazy('participante')
-
-    def form_valid(self, form):
-        form.save(self.request.user)
-        return super(ParticipanteCreate, self).form_valid(form)
-
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(ParticipanteCreate, self).dispatch(*args, **kwargs)
+    return render(request, 'forms/registro_ajax.html', {'inscripcion_form': inscripcion_form,
+                                                        'participante_forms': participante_form})
 
 
-class ParticipanteUpdate(UpdateView):
-    model = Participante
-    form_class = ParticipanteForm
-    template_name = 'portal/participante_registro.html'
-    success_url = reverse_lazy('participante')
+def create_parents(request):
+    if request.method == 'POST':
+        inscripcion_form = InscripcionForm(request.POST, request.FILES, prefix='inscripcion')
+        participantes_form = ParticipantesFormset(request.POST, request.FILES, prefix='participantes')
 
-    def form_valid(self, form):
-        form.save(self.request.user)
-        return super(ParticipanteUpdate, self).form_valid(form)
+        inscripcion_valid = inscripcion_form.is_valid()
+        participantes_valid = participantes_form.is_valid()
 
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(ParticipanteUpdate, self).dispatch(*args, **kwargs)
+        if inscripcion_valid and participantes_valid:
+            inscripcion = inscripcion_form.save()
+            participantes_form.instance = inscripcion
+            participantes_form.save()
+            return render(request, 'forms/form_success.html')
+    else:
+        inscripcion_form = InscripcionForm(prefix='inscripcion')
+        participantes_form = ParticipantesFormset(prefix='participantes')
 
-
-class ParticipanteDelete(DeleteView):
-    model = Participante
-    template_name = 'portal/participante_eliminar.html'
-    success_url = reverse_lazy('participante')
-
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(ParticipanteDelete, self).dispatch(*args, **kwargs)
-
-"""
-class PagoList(ListView):
-    model = Pago
-    template_name = 'portal/pago.html'
-    context_object_name = 'pago_lista'
-
-    def get_queryset(self, *args, **kwargs):
-        if self.request.user.is_staff:
-            return Pago.objects.all()
-        else:
-            return Pago.objects.filter(usuario=self.request.user)
-
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(PagoList, self).dispatch(*args, **kwargs)
-
-
-class PagoCreate(CreateView):
-    model = Pago
-    form_class = PagoForm
-    template_name = 'portal/pago_form.html'
-    success_url = reverse_lazy('pago')
-
-    def form_valid(self, form):
-        form.save(self.request.user)
-        return super(PagoCreate, self).form_valid(form)
-
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(PagoCreate, self).dispatch(*args, **kwargs)
-
-
-class PagoUpdate(UpdateView):
-    model = Pago
-    form_class = PagoForm
-    template_name = 'portal/pago_form.html'
-    success_url = reverse_lazy('pago')
-
-    def form_valid(self, form):
-        form.save(self.request.user)
-        return super(PagoUpdate, self).form_valid(form)
-
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(PagoUpdate, self).dispatch(*args, **kwargs)
-
-
-class PagoDelete(DeleteView):
-    model = Pago
-    template_name = 'portal/pago_eliminar.html'
-    success_url = reverse_lazy('pago')
-
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(PagoDelete, self).dispatch(*args, **kwargs)
-"""
+    return render(request, 'forms/registros_ajax.html', {'inscripcion_form': inscripcion_form,
+                                                        'participante_forms': participantes_form})
