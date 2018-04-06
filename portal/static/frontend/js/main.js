@@ -16,7 +16,7 @@ $(document).ready(function(){
           $('select').niceSelect();
     };
 
-    $('#rotaract').on('click', function () {
+    $('.rotaract').on('click', function () {
         $.ajax({
             method: "get",
             url:  "/inscripcion-ajax/",
