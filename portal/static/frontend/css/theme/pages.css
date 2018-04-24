@@ -210,7 +210,7 @@
   background: rgba(127, 127, 127, 0.5);
   margin-left: 5px;
   margin-right: 5px;
-  @inlcude transition();
+  @include transition();
 }
 
 .information-area .owl-dot.active {

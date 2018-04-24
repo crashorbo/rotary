@@ -1,16 +1,16 @@
 from django.shortcuts import render
 
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, ListView
 from .forms import InscripcionForm, ParticipanteFormset, ParticipantesFormset
+from .models import Inscripcion
 
 class IndexView(TemplateView):
     template_name = 'index.html'
 
-
-class RegistroView(FormView):
-    form_class = ParticipanteFormset
-    template_name = 'forms/registro_ajax.html'
-
+class AdministracionView(ListView):
+    model = Inscripcion
+    template_name = 'administracion/lista.html'
+    
 
 def create_parent(request):
     if request.method == 'POST':

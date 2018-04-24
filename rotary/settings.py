@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'rotary',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': '150806',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -127,7 +127,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-LOGIN_REDIRECT_URL = '/portal'
+LOGIN_REDIRECT_URL = '/administracion'
 
 LOGIN_URL = 'auth_login'
 
