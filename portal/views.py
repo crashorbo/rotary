@@ -65,6 +65,7 @@ def create_parent(request):
 def create_parents(request):
     if request.method == 'POST':
         inscripcion_form = InscripcionForm(request.POST, request.FILES, prefix='inscripcion')
+        
         participantes_form = ParticipantesFormset(request.POST, request.FILES, prefix='participantes')
 
         inscripcion_valid = inscripcion_form.is_valid()
