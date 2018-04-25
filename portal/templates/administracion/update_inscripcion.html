@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+Inscripcion Actualizar 
+{% endblock titulo %}
+
+{% block contenido %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Aceptar</button>
+</form>
+{% endblock contenido %}

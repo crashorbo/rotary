@@ -127,10 +127,22 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-LOGIN_REDIRECT_URL = '/portal'
+LOGIN_REDIRECT_URL = '/administracion'
 
 LOGIN_URL = 'auth_login'
 
 LOGOUT_REDIRECT_URL = '/'
 
+#Configuracion de Correo smtp Google
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_PORT = 587
+
+EMAIL_HOST_USER = 'rotaryconfe2018@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'rotcon2018'

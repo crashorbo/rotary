@@ -8,11 +8,16 @@ TIPO_CHOICES = (
     (4, 'SOCIOCON'),
 )
 
+TIPO_ESTADO = (
+    (True, 'SI'),
+    (False, 'NO')
+)
+
 class Inscripcion(models.Model):
     tipo = models.IntegerField(choices=TIPO_CHOICES, default=1)
     email = models.EmailField(unique=True)
     monto = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    estado = models.BooleanField(default=False)
+    estado = models.BooleanField(default=False, choices=TIPO_ESTADO)
     detalle_deposito = models.TextField(blank=True)
     created_date = models.DateTimeField(default=timezone.now)
 

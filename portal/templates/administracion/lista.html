@@ -59,13 +59,13 @@ Lista Inscripcion
                                     <td>{{inscripcion.detalle_deposito}}</td>
                                     <td>
                                         {% if inscripcion.estado %}
-                                        
-                                        {% else %}
-                                            <button class="btn btn-xs btn-warning">Confirmar</button>
+                                            <span class="text-success">Confirmado</span>
+                                        {% else %}                                            
+                                            <a href="{% url 'inscripcion_update' pk=inscripcion.id %}" class="btn btn-xs btn-warning">Confirmar</a>                                                                                    
                                         {% endif %}
                                     </td>
                                     <td>
-                                        <table class="table table-bordered">
+                                        <table class="table table-striped table-bordered">
                                             {% for participante in inscripcion.participante_set.all %}
                                                 <tr>
                                                     <td>{{ participante }}</td>

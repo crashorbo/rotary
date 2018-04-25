@@ -7,6 +7,20 @@ __pycache__/
 # C extensions
 *.so
 
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Compiled Python files
+*.pyc
+
+# Compiled C++ files
+*.out
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
 # Distribution / packaging
 .Python
 .vscode/

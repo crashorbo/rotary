@@ -14,6 +14,23 @@ class InscripcionForm(forms.ModelForm):
             'detalle_deposito': forms.Textarea(attrs={'class': 'form-control', 'rows': 2}),
         }
 
+class InscripcionUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Inscripcion
+        fields = ('tipo','email', 'monto','detalle_deposito', 'estado')
+        labels = {
+            'tipo': 'Tipo de Inscripcion',
+            'email': 'Email',
+            'monto': 'Monto',
+            'detalle_deposito': 'Detalle del Deposito',
+            'estado': 'Confirmado',}
+        widgets = {
+            'tipo': forms.Select(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'monto': forms.NumberInput(attrs={'class': 'form-control'}),
+            'detalle_deposito': forms.Textarea(attrs={'class': 'form-control', 'rows': 2}),
+            'estado': forms.Select(attrs={'class': 'form-control'}),
+        }
 
 class ParticipanteForm(forms.ModelForm):
     class Meta:
