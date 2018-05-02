@@ -5,7 +5,7 @@ TIPO_CHOICES = (
     (1, 'SOCIO'),
     (2, 'DAMA ROTARIA'),
     (3, 'ROTARACT'),
-    (4, 'SOCIOCON'),
+    (4, 'SOCIO CONYUGUE'),
 )
 
 TIPO_ESTADO = (

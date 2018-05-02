@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load pago_extras %}
 {% block titulo %}
 Lista Inscripcion  
 {% endblock titulo %}
@@ -35,9 +35,7 @@ Lista Inscripcion
         <div class="row m-t-10">
             <div class="col-sm-12">
                 <div class="card-box table-responsive">
-                    <h4 class="m-t-0 header-title"><b>Lista de Inscripciones</b></h4>
-                    
-    
+                    <h4 class="m-t-0 header-title"><b>Lista de Inscripciones</b></h4>   
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                         <thead>
                         <tr>
@@ -53,19 +51,29 @@ Lista Inscripcion
                         <tbody>
                             {% for inscripcion in object_list %}
                                 <tr>
-                                    <td>{{inscripcion.email}}</td>
-                                    <td>{{inscripcion.tipo}}</td>
-                                    <td>{{inscripcion.monto}}</td>
-                                    <td>{{inscripcion.detalle_deposito}}</td>
+                                    <td>{{ inscripcion.email }}</td>
+                                    <td>{{ inscripcion.tipo | tipo_participante }}</td>
+                                    <td>{{ inscripcion.monto }}</td>
+                                    <td>{{ inscripcion.detalle_deposito }}</td>
                                     <td>
                                         {% if inscripcion.estado %}
-                                            <span class="text-success">Confirmado</span>
+                                            <a href="{% url 'inscripcion_update' pk=inscripcion.id %}" class="btn btn-xs btn-success">Confirmado</a>
                                         {% else %}                                            
                                             <a href="{% url 'inscripcion_update' pk=inscripcion.id %}" class="btn btn-xs btn-warning">Confirmar</a>                                                                                    
                                         {% endif %}
                                     </td>
                                     <td>
                                         <table class="table table-striped table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Nro Doc</th>                        
+                                                <th>Club</th>
+                                                <th>Ciudad</th>
+                                                <th>Telefono</th>
+                                                <th> </th>
+                                            </tr>
+                                            </thead>                                
                                             {% for participante in inscripcion.participante_set.all %}
                                                 <tr>
                                                     <td>{{ participante }}</td>
@@ -73,6 +81,7 @@ Lista Inscripcion
                                                     <td>{{ participante.club }}</td>
                                                     <td>{{ participante.ciudad }}</td>
                                                     <td>{{ participante.telefono }}</td>
+                                                    <td><button class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></button></td>
                                                 </tr>  
                                             {% endfor %}
                                         </table>

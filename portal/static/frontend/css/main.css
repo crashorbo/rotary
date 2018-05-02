@@ -1769,7 +1769,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     @media (max-width: 414px) {
       .banner-content h1 {
         font-size: 32px; } }
-  .banner-content h6 {
+  .banner-content h2 {
     text-transform: uppercase;
     color: #f7a81b;
     letter-spacing: 3;
