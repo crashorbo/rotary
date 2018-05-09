@@ -6,8 +6,8 @@ from django.template.loader import get_template
 from django.core.mail import send_mail
 
 from django.views.generic import TemplateView, FormView, ListView, UpdateView
-from .forms import InscripcionForm, ParticipanteFormset, ParticipantesFormset, InscripcionUpdateForm
-from .models import Inscripcion
+from .forms import InscripcionForm, ParticipanteFormset, ParticipantesFormset, InscripcionUpdateForm, ParticipanteForm
+from .models import Inscripcion, Participante
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -15,10 +15,19 @@ class IndexView(TemplateView):
 class AdministracionView(ListView):
     model = Inscripcion
     template_name = 'administracion/lista.html'
+    ordering = ['estado']
 
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         return super(AdministracionView, self).dispatch(request, *args, **kwargs)
+
+
+class ParticipanteUpdateView(UpdateView):
+    model = Participante
+    form_class = ParticipanteForm
+    template_name = 'administracion/update_participante.html'
+    success_url = reverse_lazy('administracion')
+
 
 class InscripcionUpdateView(UpdateView):
     model = Inscripcion

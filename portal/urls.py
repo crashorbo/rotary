@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from .views import IndexView, AdministracionView, InscripcionUpdateView, create_parent, create_parents
+from .views import IndexView, AdministracionView, InscripcionUpdateView, create_parent, create_parents, ParticipanteUpdateView
 
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name='index'),
@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^inscripcions-ajax/$', create_parents, name='registros_ajax'),
     url(r'^administracion/$', AdministracionView.as_view(), name='administracion'),
     url(r'^administracion/inscripcion/(?P<pk>\d+)/$', InscripcionUpdateView.as_view(), name='inscripcion_update'),
+    url(r'^administracion/participante/(?P<pk>\d+)/$', ParticipanteUpdateView.as_view(), name='participante_update'),
 
 ]

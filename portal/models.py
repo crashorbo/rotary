@@ -33,6 +33,7 @@ class Participante(models.Model):
     ciudad = models.CharField(max_length=100)
     club = models.CharField(max_length=200)
     telefono = models.CharField(max_length=50)
+    material = models.BooleanField(default=False)
 
     def __str__(self):
         return '{} {}'.format(self.nombres, self.apellidos)

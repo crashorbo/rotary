@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+Participante Actualizar 
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+        <div class="card-box">
+            <h4 class="m-t-0 header-title"><b>Actualizar Participante</b></h4>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="{% url 'administracion' %}" class="btn btn-inverse">Cancelar</a>
+            </form>
+        </div>
+    </div>    
+</div>
+
+{% endblock contenido %}
