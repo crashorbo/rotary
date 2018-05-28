@@ -22,7 +22,7 @@ Lista Inscripcion
             <div class="btn-group pull-right m-t-15">
                 <button type="button" class="btn btn-default dropdown-toggle waves-effect" data-toggle="dropdown" aria-expanded="false">Opciones <span class="m-l-5"><i class="fa fa-cog"></i></span></button>
                 <ul class="dropdown-menu drop-menu-right" role="menu">
-                    <li><a href="#">Imprimir Lista</a></li>
+                    <li><a href="{% url 'inscripcion_reporte' %}">Imprimir Lista</a></li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
                     <li class="divider"></li>
@@ -39,7 +39,6 @@ Lista Inscripcion
                     <table id="datatable" class="table table-striped table-bordered">
                         <thead>
                         <tr>
-                            <th>Email</th>
                             <th>Tipo</th>                        
                             <th>Monto</th>
                             <th>Detalle Deposito</th>
@@ -51,7 +50,6 @@ Lista Inscripcion
                         <tbody>
                             {% for inscripcion in object_list %}
                                 <tr>
-                                    <td>{{ inscripcion.email }}</td>
                                     <td>{{ inscripcion.tipo | tipo_participante }}</td>
                                     <td>{{ inscripcion.monto }}</td>
                                     <td>{{ inscripcion.detalle_deposito }}</td>
@@ -81,7 +79,10 @@ Lista Inscripcion
                                                     <td>{{ participante.club }}</td>
                                                     <td>{{ participante.ciudad }}</td>
                                                     <td>{{ participante.telefono }}</td>
-                                                    <td><a href="{% url 'participante_update' pk=participante.id %}" class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></a></td>
+                                                    <td><a href="{% url 'participante_update' pk=participante.id %}" class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></a>
+                                                    <a id="credencial{{ participante.id }}" class="btn btn-xs btn-success" onclick="abrirventana(event, this);" href="/asdas/asdas">CR</a>
+                                                    <a id="material{{ participante.id }}" class="btn btn-xs btn-success" href="javascript:void(0);">MA</a>
+                                                    <a id="certificado{{ participante.id }}" class="btn btn-xs btn-success" href="javascript:void(0);">CE</a></td>
                                                 </tr>  
                                             {% endfor %}
                                         </table>
