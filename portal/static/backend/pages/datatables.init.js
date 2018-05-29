@@ -31,7 +31,7 @@ var inicializarIdioma = function(){
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
         },
-        order: [[ 4, "desc" ]]
+        order: [[ 3, "desc" ]]
     });
     $('#datatable-keytable').DataTable({keys: true});
     $('#datatable-responsive').DataTable();
@@ -69,10 +69,32 @@ TablaInicializarIdioma = function() {
     }
 }();
 
-function abrirventana(e, obj)
+function imprimirlista(e, obj)
 {
     e.preventDefault();
-    url = $(obj).attr('href');
+    this_url = $(obj).attr('href');
+    window.open(this_url,"_blank","height=500,width=700,status=no,toolbar=no,menubar=no,location=no,scrollbars=yes");
+}
+
+function imprimirdocumento(e, obj)
+{
+    e.preventDefault();
+    this_url = $(obj).attr('href');
+    window.open(this_url,"_blank","height=500,width=700,status=no,toolbar=no,menubar=no,location=no,scrollbars=yes");
     $(obj).attr('class', 'btn btn-xs btn-danger');
-    alert('se previno la funcion '+url);
+}
+
+function asistencia(e, obj)
+{
+    e.preventDefault();
+    this_url = $(obj).attr('href');
+    $.ajax({
+        url: this_url,
+        type: 'get',
+        success: function(data){
+            $(obj).attr('class', 'btn btn-xs btn-danger');
+            alert(data.success);
+        }
+    })    
+    //window.open(Routing.generate('reporte_mensual_imprimir',{fecha1: fecha1, fecha2: fecha2}),"_blank","height=500,width=700,status=no,toolbar=no,menubar=no,location=no,scrollbars=yes");
 }

@@ -14,8 +14,12 @@ from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT
 from reportlab.lib.pagesizes import letter, landscape
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import cm
+from reportlab.graphics.shapes import Drawing 
+from reportlab.graphics.barcode.qr import QrCodeWidget 
+from reportlab.graphics import renderPDF
 
-from django.http import HttpResponse
+
+from django.http import HttpResponse, JsonResponse
 from django.views.generic import TemplateView, FormView, ListView, UpdateView
 from .forms import InscripcionForm, ParticipanteFormset, ParticipantesFormset, InscripcionUpdateForm, ParticipanteForm
 from .models import Inscripcion, Participante
@@ -39,12 +43,89 @@ class AdministracionView(ListView):
     def dispatch(self, request, *args, **kwargs):
         return super(AdministracionView, self).dispatch(request, *args, **kwargs)
 
+def generar_certificado(request, pk):
+    p = Participante.objects.get(pk=pk)
+    p.certificado = True
+    p.save()
+    response = HttpResponse(content_type='application/pdf')
+    pdf_name = "certificado.pdf"  # llamado clientes
+    response['Content-Disposition'] = 'inline; filename=%s' % pdf_name
+    buff = BytesIO()
+    c = canvas.Canvas(buff, pagesize=landscape(letter))
+    
+    c.setFont('Helvetica-BoldOblique', 30)
+    c.drawCentredString(400,300,p.nombres + ' ' + p.apellidos)
+    c.showPage()
+    c.save()
+
+    response.write(buff.getvalue())
+    buff.close()
+    return response
+
+def generar_credencial(request, pk):
+    p = Participante.objects.get(pk=pk)
+    p.credencial = True
+    p.save()
+
+    response = HttpResponse(content_type='application/pdf')
+    pdf_name = "crendecial.pdf"  # llamado clientes
+    response['Content-Disposition'] = 'inline; filename=%s' % pdf_name
+    buff = BytesIO()
+    c = canvas.Canvas(buff, pagesize=letter)
+    
+    c.setFont('Helvetica-BoldOblique', 16)
+    c.drawCentredString(110,720,(p.nombres).upper())
+    c.setFont('Helvetica', 10)
+    c.drawCentredString(110,695,(p.nombres + ' ' + p.apellidos).upper())
+    c.drawCentredString(110,670,(p.club).upper())
+    c.drawCentredString(110,645,(p.ciudad).upper())
+    qrw = QrCodeWidget('CONFERENCIA ROTARY 4690|2018|'+(p.nombres + ' ' + p.apellidos).upper())
+    b = qrw.getBounds()
+
+    w=b[2]-b[0] 
+    h=b[3]-b[1] 
+
+    d = Drawing(40,40,transform=[40./w,0,0,40./h,0,0]) 
+    d.add(qrw)
+
+    renderPDF.draw(d, c, 160, 630)
+
+    c.showPage()
+    c.save()
+
+    response.write(buff.getvalue())
+    buff.close()
+    return response
+
+def entrega_material(request, pk):
+    p = Participante.objects.get(pk=pk)
+    p.material = True
+    p.save()
+    return JsonResponse({'success':'entrega completa'}, status=200)
+
+def asistencia_ina(request, pk):
+    p = Participante.objects.get(pk=pk)
+    p.ina = True
+    p.save()
+    return JsonResponse({'success':'registro de asistencia exitoso'}, status=200)
+
+def asistencia_pt(request, pk):
+    p = Participante.objects.get(pk=pk)
+    p.pt = True
+    p.save()
+    return JsonResponse({'success':'registro de asistencia exitoso'}, status=200)
+
+def asistencia_cg(request, pk):
+    p = Participante.objects.get(pk=pk)
+    p.cg = True
+    p.save()
+    return JsonResponse({'success':'registro de asistencia exitoso'}, status=200)
+
 def generarlista_pdf(request):
-    print("Genero el PDF")
     response = HttpResponse(content_type='application/pdf')
     pdf_name = "inscripcion.pdf"  # llamado clientes
     # la linea 26 es por si deseas descargar el pdf a tu computadora
-    response['Content-Disposition'] = 'attachment; filename=%s' % pdf_name
+    response['Content-Disposition'] = 'inline; filename=%s' % pdf_name
     buff = BytesIO()
     doc = SimpleDocTemplate(buff,
                             pagesize=landscape(letter),

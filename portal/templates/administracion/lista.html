@@ -22,11 +22,7 @@ Lista Inscripcion
             <div class="btn-group pull-right m-t-15">
                 <button type="button" class="btn btn-default dropdown-toggle waves-effect" data-toggle="dropdown" aria-expanded="false">Opciones <span class="m-l-5"><i class="fa fa-cog"></i></span></button>
                 <ul class="dropdown-menu drop-menu-right" role="menu">
-                    <li><a href="{% url 'inscripcion_reporte' %}">Imprimir Lista</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
+                    <li><a onclick="imprimirlista(event, this);" href="{% url 'inscripcion_reporte' %}">Imprimir Lista</a></li>
                 </ul>
             </div>                        
         </div>
@@ -79,10 +75,15 @@ Lista Inscripcion
                                                     <td>{{ participante.club }}</td>
                                                     <td>{{ participante.ciudad }}</td>
                                                     <td>{{ participante.telefono }}</td>
-                                                    <td><a href="{% url 'participante_update' pk=participante.id %}" class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></a>
-                                                    <a id="credencial{{ participante.id }}" class="btn btn-xs btn-success" onclick="abrirventana(event, this);" href="/asdas/asdas">CR</a>
-                                                    <a id="material{{ participante.id }}" class="btn btn-xs btn-success" href="javascript:void(0);">MA</a>
-                                                    <a id="certificado{{ participante.id }}" class="btn btn-xs btn-success" href="javascript:void(0);">CE</a></td>
+                                                    <td>
+                                                        <a href="{% url 'participante_update' pk=participante.id %}" class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></a>
+                                                        <a id="credencial{{ participante.id }}" class="btn btn-xs {% if participante.credencial %}btn-danger{% else %}btn-success{% endif %}" href="{% url 'credencial_reporte' pk=participante.id %}" onclick="imprimirdocumento(event, this);">CR</a>
+                                                        <a id="material{{ participante.id }}" class="btn btn-xs {% if participante.material %}btn-danger{% else %}btn-success{% endif %}" href="{% url 'entrega_material' pk=participante.id %}" onclick="asistencia(event, this);">MA</a>
+                                                        <a id="certificado{{ participante.id }}" class="btn btn-xs {% if participante.certificado %}btn-danger{% else %}btn-success{% endif %}" href="{% url 'certificado_reporte' pk=participante.id %}" onclick="imprimirdocumento(event, this);">CE</a>
+                                                        <a id="certificado{{ participante.id }}" class="btn btn-xs {% if participante.ina %}btn-danger{% else %}btn-success{% endif %}" href="{% url 'asistencia_ina' pk=participante.id %}" onclick="asistencia(event, this);">IN</a>
+                                                        <a id="certificado{{ participante.id }}" class="btn btn-xs {% if participante.pt %}btn-danger{% else %}btn-success{% endif %}" href="{% url 'asistencia_pt' pk=participante.id %}" onclick="asistencia(event, this);">PT</a>
+                                                        <a id="certificado{{ participante.id }}" class="btn btn-xs {% if participante.cg %}btn-danger{% else %}btn-success{% endif %}" href="{% url 'asistencia_cg' pk=participante.id %}" onclick="asistencia(event, this);">CG</a>
+                                                    </td>
                                                 </tr>  
                                             {% endfor %}
                                         </table>
