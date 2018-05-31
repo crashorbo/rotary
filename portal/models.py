@@ -36,6 +36,7 @@ class Participante(models.Model):
     material = models.BooleanField(default=False, choices=TIPO_ESTADO)
     credencial = models.BooleanField(default=False, choices=TIPO_ESTADO)
     certificado = models.BooleanField(default=False, choices=TIPO_ESTADO)
+    ag = models.BooleanField(default=False, choices=TIPO_ESTADO)
     ina = models.BooleanField(default=False, choices=TIPO_ESTADO)
     pt = models.BooleanField(default=False, choices=TIPO_ESTADO)
     cg = models.BooleanField(default=False, choices=TIPO_ESTADO)

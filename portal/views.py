@@ -54,7 +54,7 @@ def generar_certificado(request, pk):
     c = canvas.Canvas(buff, pagesize=landscape(letter))
     
     c.setFont('Helvetica-BoldOblique', 30)
-    c.drawCentredString(400,300,p.nombres + ' ' + p.apellidos)
+    c.drawCentredString(390,300,p.nombres + ' ' + p.apellidos)
     c.showPage()
     c.save()
 
@@ -74,11 +74,11 @@ def generar_credencial(request, pk):
     c = canvas.Canvas(buff, pagesize=letter)
     
     c.setFont('Helvetica-BoldOblique', 16)
-    c.drawCentredString(110,720,(p.nombres).upper())
+    c.drawCentredString(140,680,(p.nombres).upper())
     c.setFont('Helvetica', 10)
-    c.drawCentredString(110,695,(p.nombres + ' ' + p.apellidos).upper())
-    c.drawCentredString(110,670,(p.club).upper())
-    c.drawCentredString(110,645,(p.ciudad).upper())
+    c.drawString(105,645,(p.apellidos).upper())
+    c.drawCentredString(150,618,(p.club).upper())
+    c.drawCentredString(145,593,(p.ciudad).upper())
     qrw = QrCodeWidget('CONFERENCIA ROTARY 4690|2018|'+(p.nombres + ' ' + p.apellidos).upper())
     b = qrw.getBounds()
 
@@ -88,7 +88,7 @@ def generar_credencial(request, pk):
     d = Drawing(40,40,transform=[40./w,0,0,40./h,0,0]) 
     d.add(qrw)
 
-    renderPDF.draw(d, c, 160, 630)
+    renderPDF.draw(d, c, 230, 580)
 
     c.showPage()
     c.save()
@@ -100,6 +100,12 @@ def generar_credencial(request, pk):
 def entrega_material(request, pk):
     p = Participante.objects.get(pk=pk)
     p.material = True
+    p.save()
+    return JsonResponse({'success':'entrega completa'}, status=200)
+
+def entrega_ag(request, pk):
+    p = Participante.objects.get(pk=pk)
+    p.ag = True
     p.save()
     return JsonResponse({'success':'entrega completa'}, status=200)
 
