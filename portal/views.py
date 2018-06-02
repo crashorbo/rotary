@@ -208,12 +208,13 @@ def generarlista_pdf(request):
     inscritos.append(header)
     headings = (Paragraph('Email', cabecera), Paragraph('Tipo', cabecera), Paragraph('Monto',cabecera), Paragraph('Detalle Deposito', cabecera), Paragraph('Estado',cabecera), Paragraph('Participantes', cabecera))
     topheading = (Paragraph('Rotary 4690', celda))
-
+    total = 0
     for inscripcion in Inscripcion.objects.all():
         iemail = Paragraph(inscripcion.email, celda)
         itipo = Paragraph(TIPO_SELECT[inscripcion.tipo], celda)
         imonto = Paragraph(str(inscripcion.monto), celdaderecha)
         ideposito = Paragraph(inscripcion.detalle_deposito, celda)
+        total = total + inscripcion.monto
         p = ""
         for participante in inscripcion.participante_set.all():
             p = p + participante.nombres + " " + participante.apellidos + "<br />\n"
@@ -233,7 +234,10 @@ def generarlista_pdf(request):
             ('BACKGROUND', (0, 0), (-1, 0), colors.darkblue)
         ]
     ))
+
     inscritos.append(t)
+    ptotal = Paragraph("Total Recaudado = " + str(total) + " Bs.", styles['Heading2'])
+    inscritos.append(ptotal)
     doc.build(inscritos)
 
     #guardar pdf
