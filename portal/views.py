@@ -214,6 +214,7 @@ def generarlista_pdf(request):
     tpart = 0
     tinsc = 0 
     for inscripcion in Inscripcion.objects.all():
+        p = ""
         for participante in inscripcion.participante_set.all():
             p = p + participante.nombres + " " + participante.apellidos + "<br />\n"
             tpart = tpart + 1
@@ -232,8 +233,9 @@ def generarlista_pdf(request):
             ideposito = Paragraph(inscripcion.detalle_deposito, celdaremarcada)
             iparticipantes = Paragraph(str(p), celdaremarcada)
             total = total + inscripcion.monto
+
         tinsc = tinsc + 1
-        p = ""
+
         if (inscripcion.estado):
             iestado = Paragraph("Confirmado", celdaverde)
         else:
