@@ -197,10 +197,12 @@ def generarlista_pdf(request):
     cabeza = ParagraphStyle(name="cabeza", alignment=TA_LEFT, fontSize=14, fontName="Times-Roman", textColor=colors.darkblue)
     cabecera = ParagraphStyle(name="cabecera", alignment=TA_CENTER, fontSize=12, fontName="Times-Roman", textColor=colors.white)
     celdaderecha = ParagraphStyle(name="celdaderecha",alignment=TA_RIGHT, fontsize=8, fontName="Times-Roman")
+    celdaderecharem = ParagraphStyle(name="celdaderecha",alignment=TA_RIGHT, fontsize=8, fontName="Times-Roman", backColor = colors.yellow)
     celda = ParagraphStyle(name="celda", alignment=TA_LEFT, fontsize=8, fontName="Times-Roman")
     celdaverde = ParagraphStyle(name="celdaverde", alignment=TA_CENTER, fontSize=8, fontName="Times-Roman", textColor=colors.green)
     celdaroja = ParagraphStyle(name="celdaroja", alignment=TA_CENTER, fontSize=8, fontName="Times-Roman", textColor=colors.red)
-
+    celdarojarem = ParagraphStyle(name="celdaroja", alignment=TA_CENTER, fontSize=8, fontName="Times-Roman", textColor=colors.red, backColor = colors.yellow)
+    celdaremarcada = ParagraphStyle(name="celda", alignment=TA_LEFT, fontsize=8, fontName="Times-Roman", backColor = colors.yellow)
     inscritos = []
     allinscritos = []
     styles = getSampleStyleSheet()
@@ -209,20 +211,31 @@ def generarlista_pdf(request):
     headings = (Paragraph('Email', cabecera), Paragraph('Tipo', cabecera), Paragraph('Monto',cabecera), Paragraph('Detalle Deposito', cabecera), Paragraph('Estado',cabecera), Paragraph('Participantes', cabecera))
     topheading = (Paragraph('Rotary 4690', celda))
     total = 0
+    tpart = 0
+    tinsc = 0 
     for inscripcion in Inscripcion.objects.all():
-        iemail = Paragraph(inscripcion.email, celda)
-        itipo = Paragraph(TIPO_SELECT[inscripcion.tipo], celda)
-        imonto = Paragraph(str(inscripcion.monto), celdaderecha)
-        ideposito = Paragraph(inscripcion.detalle_deposito, celda)
-        total = total + inscripcion.monto
+        if (inscripcion.monto > 0):
+            iemail = Paragraph(inscripcion.email, celda)
+            itipo = Paragraph(TIPO_SELECT[inscripcion.tipo], celda)
+            imonto = Paragraph(str(inscripcion.monto), celdaderecharem)
+            ideposito = Paragraph(inscripcion.detalle_deposito, celda)
+            total = total + inscripcion.monto
+        else:
+            iemail = Paragraph(inscripcion.email, celdaremarcada)
+            itipo = Paragraph(TIPO_SELECT[inscripcion.tipo], celdaremarcada)
+            imonto = Paragraph(str(inscripcion.monto), celdaderecha)
+            ideposito = Paragraph(inscripcion.detalle_deposito, celdaremarcada)
+            total = total + inscripcion.monto
+        tinsc = tinsc + 1
         p = ""
         for participante in inscripcion.participante_set.all():
             p = p + participante.nombres + " " + participante.apellidos + "<br />\n"
-        iparticipantes = Paragraph(str(p), celda)
+            tpart = tpart + 1
+        iparticipantes = Paragraph(str(p), celdaremarcada)
         if (inscripcion.estado):
             iestado = Paragraph("Confirmado", celdaverde)
         else:
-            iestado = Paragraph("Por Confirmar", celdaroja)
+            iestado = Paragraph("Por Confirmar", celdarojarem)
         this_inscripcion = [iemail, itipo, imonto, ideposito, iestado, iparticipantes]
         allinscritos.append(this_inscripcion)
 
@@ -237,7 +250,11 @@ def generarlista_pdf(request):
 
     inscritos.append(t)
     ptotal = Paragraph("Total Recaudado = " + str(total) + " Bs.", styles['Heading2'])
+    ptinsc = Paragraph("Total Inscripciones = " + str(tinsc), styles['Heading2'])
+    ptpart = Paragraph("Total Participantes = " + str(tpart), styles['Heading2'])
     inscritos.append(ptotal)
+    inscritos.append(ptinsc)
+    inscritos.append(ptpart)
     doc.build(inscritos)
 
     #guardar pdf
