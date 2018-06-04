@@ -214,24 +214,26 @@ def generarlista_pdf(request):
     tpart = 0
     tinsc = 0 
     for inscripcion in Inscripcion.objects.all():
+        for participante in inscripcion.participante_set.all():
+            p = p + participante.nombres + " " + participante.apellidos + "<br />\n"
+            tpart = tpart + 1
+
         if (inscripcion.monto > 0):
             iemail = Paragraph(inscripcion.email, celda)
             itipo = Paragraph(TIPO_SELECT[inscripcion.tipo], celda)
-            imonto = Paragraph(str(inscripcion.monto), celdaderecharem)
+            imonto = Paragraph(str(inscripcion.monto), celdaderecha)
             ideposito = Paragraph(inscripcion.detalle_deposito, celda)
+            iparticipantes = Paragraph(str(p), celda)
             total = total + inscripcion.monto
         else:
             iemail = Paragraph(inscripcion.email, celdaremarcada)
             itipo = Paragraph(TIPO_SELECT[inscripcion.tipo], celdaremarcada)
-            imonto = Paragraph(str(inscripcion.monto), celdaderecha)
+            imonto = Paragraph(str(inscripcion.monto), celdaderecharem)
             ideposito = Paragraph(inscripcion.detalle_deposito, celdaremarcada)
+            iparticipantes = Paragraph(str(p), celdaremarcada)
             total = total + inscripcion.monto
         tinsc = tinsc + 1
         p = ""
-        for participante in inscripcion.participante_set.all():
-            p = p + participante.nombres + " " + participante.apellidos + "<br />\n"
-            tpart = tpart + 1
-        iparticipantes = Paragraph(str(p), celdaremarcada)
         if (inscripcion.estado):
             iestado = Paragraph("Confirmado", celdaverde)
         else:
