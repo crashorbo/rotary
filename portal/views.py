@@ -212,12 +212,24 @@ def generarlista_pdf(request):
     topheading = (Paragraph('Rotary 4690', celda))
     total = 0
     tpart = 0
-    tinsc = 0 
+    tinsc = 0
+    tmaterial = 0
+    tagenda = 0
+    tptalento = 0
+    tcenagala = 0
     for inscripcion in Inscripcion.objects.all():
         p = ""
         for participante in inscripcion.participante_set.all():
             p = p + participante.nombres + " " + participante.apellidos + "<br />\n"
             tpart = tpart + 1
+            if participante.material:
+                tmaterial = tmaterial + 1
+            if participante.ag:
+                tagenda = tagenda + 1
+            if participante.pt:
+                tptalento = tptalento + 1
+            if participante.cg
+                tcenagala = tcenagala + 1
 
         if (inscripcion.monto > 0):
             iemail = Paragraph(inscripcion.email, celda)
@@ -256,9 +268,17 @@ def generarlista_pdf(request):
     ptotal = Paragraph("Total Recaudado = " + str(total) + " Bs.", styles['Heading2'])
     ptinsc = Paragraph("Total Inscripciones = " + str(tinsc), styles['Heading2'])
     ptpart = Paragraph("Total Participantes = " + str(tpart), styles['Heading2'])
+    ptmaterial = Paragraph("Total Material entregado = " + str(tmaterial), styles['Heading2'])
+    ptagenda = Paragraph("Total Agendas Entregadas = " + str(tagenda), styles['Heading2'])
+    ptptalento = Paragraph("Total Peña de Talentos = " + str(tptalento), styles['Heading2'])
+    ptcenagala = Paragraph("Total Cena de Gala = " + str(tcenagala), styles['Heading2'])
     inscritos.append(ptotal)
     inscritos.append(ptinsc)
     inscritos.append(ptpart)
+    inscritos.append(ptmaterial)
+    inscritos.append(ptagenda)
+    inscritos.append(ptptalento)
+    inscritos.append(ptcenagala)
     doc.build(inscritos)
 
     #guardar pdf
