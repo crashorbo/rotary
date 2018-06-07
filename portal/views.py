@@ -228,7 +228,7 @@ def generarlista_pdf(request):
                 tagenda = tagenda + 1
             if participante.pt:
                 tptalento = tptalento + 1
-            if participante.cg
+            if participante.cg:
                 tcenagala = tcenagala + 1
 
         if (inscripcion.monto > 0):
